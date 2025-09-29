@@ -24,11 +24,48 @@ body, .sb-root {
 .strong { font-weight:700; }
 
 /* Header */
-.sb-header {position:fixed;top:0;width:100%;z-index:1000;transition:all .3s ease;}
-.sb-header__inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:16px 24px;}
-.sb-header--scrolled{background:#000;box-shadow:0 2px 10px rgba(0,0,0,.6);}
-.sb-logo{height:40px;transition:opacity .3s ease;}
-.is-hidden{opacity:0;}
+.sb-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all .4s ease;
+}
+
+.sb-header__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 32px;
+  transition: all .4s ease;
+}
+
+.sb-header--scrolled {
+  background: #000;
+  box-shadow: 0 2px 10px rgba(0,0,0,.6);
+  padding: 10px 24px; /* shrink */
+}
+
+.sb-logo {
+  height: 64px; /* logo plus gros */
+  transition: all .4s ease, opacity .3s ease;
+}
+
+.sb-header--scrolled .sb-logo {
+  height: 40px; /* shrink au scroll */
+}
+
+.sb-cta {
+  display: flex;
+  gap: 16px; /* espacement uniforme entre boutons */
+}
+
+.is-hidden {
+  opacity: 0;
+}
+
 
 /* Buttons */
 .sb-btn{padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600;transition:.3s;display:inline-block}
@@ -154,7 +191,7 @@ export default function SenseiBurritoSite() {
         <div className="sb-header__inner">
           <a className="sb-brand" href="#top" aria-label="Sensei Burrito">
             <img
-              src="/logo-blanc.png"
+              src="/logo_png.png"
               alt="Sensei Burrito"
               className={`sb-logo sb-logo--light ${scrolled ? "is-hidden" : ""}`}
             />
@@ -163,13 +200,14 @@ export default function SenseiBurritoSite() {
               alt="Sensei Burrito"
               className={`sb-logo sb-logo--dark ${scrolled ? "" : "is-hidden"}`}
             />
-          </a>
-          <nav className="sb-cta">
-            <a className="sb-btn sb-btn--gold" href="#collect">Click & Collect</a>
-            <a className="sb-btn sb-btn--dark" href="#delivery">Livraison</a>
-          </nav>
-        </div>
-      </header>
+        </a>
+        <nav className="sb-cta">
+          <a className="sb-btn sb-btn--gold" href="#collect">Click & Collect</a>
+          <a className="sb-btn sb-btn--dark" href="#delivery">Livraison</a>
+          <a className="sb-btn sb-btn--gold" href="#reservation">Réservation</a>
+        </nav>
+      </div>
+    </header>
 
       {/* HERO */}
       <section id="top" className="sb-hero">
