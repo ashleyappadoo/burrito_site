@@ -41,7 +41,7 @@ body, .sb-root {
 .sb-hero{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
 .sb-hero__video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-2}
 .sb-hero__overlay{position:absolute;inset:0;}
-.sb-hero__overlay--gradient{background:linear-gradient(to bottom,rgba(0,0,0,.8),rgba(0,0,0,.9));z-index:-1}
+.sb-hero__overlay--gradient{background:linear-gradient(to bottom,rgba(0,0,0,.4),rgba(0,0,0,.6));}
 .sb-hero__overlay--grid{background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:40px 40px;z-index:-1}
 .sb-hero__content{max-width:800px;padding:0 16px}
 .sb-hero__title{font-family:var(--font-title);font-size:48px;margin:0 0 16px}
