@@ -23,13 +23,14 @@ body, .sb-root {
 .gold { color: var(--gold); }
 .strong { font-weight:700; }
 
-/* Header */
+/* HEADER */
 .sb-header {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
   transition: all .4s ease;
+  background: transparent;
 }
 
 .sb-header__inner {
@@ -38,42 +39,52 @@ body, .sb-root {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 32px; /* identique avant et après scroll */
+  padding: 20px 32px;
+  transition: all .4s ease;
 }
 
+/* Header shrink au scroll */
 .sb-header--scrolled {
   background: #000;
   box-shadow: 0 2px 10px rgba(0,0,0,.6);
-  padding: 10px 24px; /* shrink */
+  padding: 10px 24px; /* réduit la hauteur */
 }
 
+/* Logo */
 .sb-logo {
-  height: 64px; /* taille de base */
+  height: 64px;
   transition: transform .4s ease, opacity .3s ease;
-  transform-origin: left center; /* ancrage à gauche pour éviter le décalage */
+  transform-origin: left center;
 }
-
 .sb-header--scrolled .sb-logo {
-  transform: scale(0.65); /* dézoom fluide */
+  transform: scale(0.75); /* dézoom fluide */
 }
 
+/* CTA boutons */
 .sb-cta {
   display: flex;
-  gap: 16px; /* espacement uniforme entre boutons */
+  gap: 16px;
+  transition: transform .4s ease;
+}
+.sb-header--scrolled .sb-cta {
+  transform: scale(0.85);
+  transform-origin: right center;
 }
 
-.is-hidden {
-  opacity: 0;
+.sb-btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all .3s ease;
+  display: inline-block;
 }
+.sb-btn--gold { background: var(--gold); color: #000; }
+.sb-btn--gold:hover { background: #c19b2e; color: #fff; }
+.sb-btn--dark { background: #000; color: #fff; border: 1px solid var(--gold); }
+.sb-btn--dark:hover { background: #111; color: var(--gold); }
 
-/* Buttons */
-.sb-btn{padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:600;transition:.3s;display:inline-block}
-.sb-btn--gold{background:var(--gold);color:#000;}
-.sb-btn--gold:hover{background:#c19b2e;color:#fff;}
-.sb-btn--dark{background:#000;color:#fff;border:1px solid var(--gold)}
-.sb-btn--dark:hover{background:#111;color:var(--gold)}
-
-/* Hero */
+/* HERO */
 .sb-hero {
   position: relative;
   height: 100vh;
@@ -83,55 +94,39 @@ body, .sb-root {
   text-align: center;
   overflow: hidden;
 }
-
 .sb-hero__video {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   object-fit: cover;
-  z-index: 0; /* la vidéo est en fond */
+  z-index: 0;
 }
-
 .sb-hero__overlay {
   position: absolute;
   inset: 0;
-  z-index: 1; /* overlays au-dessus de la vidéo */
+  z-index: 1;
 }
-
 .sb-hero__overlay--gradient {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6));
 }
-
 .sb-hero__overlay--grid {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
   background-size: 40px 40px;
 }
-
 .sb-hero__content {
   position: relative;
-  z-index: 2; /* texte toujours au-dessus */
+  z-index: 2;
   max-width: 800px;
   padding: 0 16px;
 }
-
 .sb-hero__title {
   font-family: var(--font-title);
   font-size: 48px;
   margin: 0 0 16px;
 }
-
-.sb-hero__tagline {
-  font-size: 18px;
-  color: var(--muted);
-}
-
-.sb-hero__actions {
-  margin-top: 20px;
-}
-
+.sb-hero__tagline { font-size: 18px; color: var(--muted); }
+.sb-hero__actions { margin-top: 20px; }
 .sb-hero__badges {
   list-style: none;
   padding: 0;
@@ -143,31 +138,74 @@ body, .sb-root {
   color: var(--muted);
 }
 
-/* Section */
-.sb-section{padding:80px 20px;}
-.sb-h2{font-family:var(--font-title);font-size:36px;margin-bottom:12px;text-align:center}
-.sb-lead{text-align:center;color:var(--muted);max-width:700px;margin:0 auto 40px}
+/* SECTION */
+.sb-section { padding:80px 20px; }
+.sb-h2 {
+  font-family:var(--font-title);
+  font-size:36px;
+  margin-bottom:12px;
+  text-align:center
+}
+.sb-lead {
+  text-align:center;
+  color:var(--muted);
+  max-width:700px;
+  margin:0 auto 40px
+}
 
 /* Concept cards */
-.sb-grid-img{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:32px}
+.sb-grid-img {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:24px;
+  margin-top:32px
+}
 @media(max-width:900px){.sb-grid-img{grid-template-columns:1fr}}
-.sb-card-img{background:#0d0d0d;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 8px 16px rgba(0,0,0,.18);transition:transform .25s ease, box-shadow .25s ease}
-.sb-card-img:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.35)}
-.sb-card-img img{width:100%;height:220px;object-fit:cover}
-.sb-card-img__body{padding:18px}
-.sb-card-img__body h3{margin:0 0 8px;font-size:18px;font-weight:700}
-.sb-card-img__body p{margin:0;color:var(--muted);font-size:15px;line-height:1.4}
+.sb-card-img {
+  background:#0d0d0d;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  box-shadow:0 8px 16px rgba(0,0,0,.18);
+  transition:transform .25s ease, box-shadow .25s ease
+}
+.sb-card-img:hover {
+  transform:translateY(-4px);
+  box-shadow:0 18px 40px rgba(0,0,0,.35)
+}
+.sb-card-img img { width:100%; height:220px; object-fit:cover }
+.sb-card-img__body { padding:18px }
+.sb-card-img__body h3 {
+  margin:0 0 8px;
+  font-size:18px;
+  font-weight:700
+}
+.sb-card-img__body p {
+  margin:0;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.4
+}
 
 /* Split layout (Histoire) */
-.sb-split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;max-width:1200px;margin:0 auto}
+.sb-split {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+  max-width:1200px;
+  margin:0 auto
+}
 @media(max-width:900px){.sb-split{grid-template-columns:1fr}}
 
-/* Footer */
-.sb-footer{background:#000;padding:40px 20px;text-align:center;border-top:1px solid var(--line)}
-.sb-footer__inner{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:12px;align-items:center}
-.sb-footer__brand img{height:30px;margin-bottom:12px}
-.sb-footer__social a{margin:0 8px;color:var(--muted);text-decoration:none}
-.sb-footer__social a:hover{color:var(--gold)}
+/* FOOTER */
+.sb-footer { background:#000; padding:40px 20px; text-align:center; border-top:1px solid var(--line) }
+.sb-footer__inner { max-width:1200px; margin:0 auto; display:flex; flex-direction:column; gap:12px; align-items:center }
+.sb-footer__brand img { height:30px; margin-bottom:12px }
+.sb-footer__social a { margin:0 8px; color:var(--muted); text-decoration:none }
+.sb-footer__social a:hover { color:var(--gold) }
 `;
 
 export default function SenseiBurritoSite() {
@@ -179,6 +217,7 @@ export default function SenseiBurritoSite() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Forcer lecture auto de la vidéo
   useEffect(() => {
     const video = document.querySelector(".sb-hero__video");
     if (video) {
@@ -196,16 +235,7 @@ export default function SenseiBurritoSite() {
       <header className={`sb-header ${scrolled ? "sb-header--scrolled" : ""}`}>
         <div className="sb-header__inner">
           <a className="sb-brand" href="#top" aria-label="Sensei Burrito">
-            <img
-              src="/logo_png.png"
-              alt="Sensei Burrito"
-              className={`sb-logo sb-logo--light ${scrolled ? "is-hidden" : ""}`}
-            />
-            <img
-              src="/logo-noir.png"
-              alt="Sensei Burrito"
-              className={`sb-logo sb-logo--dark ${scrolled ? "" : "is-hidden"}`}
-            />
+            <img src="/logo_png.png" alt="Sensei Burrito" className="sb-logo" />
           </a>
           <nav className="sb-cta">
             <a className="sb-btn sb-btn--gold" href="#collect">Click & Collect</a>
@@ -289,7 +319,7 @@ export default function SenseiBurritoSite() {
               Installés dans la rue Tiquetonne, au cœur d'un quartier historique et commerçant, nous perpétuons une <span className="gold strong">tradition familiale ancrée ici depuis plus de 40 ans</span>. Un quartier où l'on connaît ses voisins, où les clients deviennent des habitués.
             </p>
             <p>
-              Notre marque s'inspire de l'<strong>Enzo (円相)</strong>, le cercle japonais tracé d'un seul geste, symbole d'unité et d'harmonie. Il est au cœur de notre identité : chaque burrito est unique, artisanal, jamais identique, mais toujours façonné avec respect et équilibre.
+              Notre marque s'inspire de l'<strong>Enzo (円相)</strong>, le cercle japonais tracé d'un seul geste, symbole d'unité et d'harmonie. Chaque burrito est unique, artisanal, jamais identique, mais toujours façonné avec respect et équilibre.
             </p>
           </div>
         </div>
