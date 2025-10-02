@@ -38,8 +38,7 @@ body, .sb-root {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 32px;
-  transition: all .4s ease;
+  padding: 16px 32px; /* identique avant et après scroll */
 }
 
 .sb-header--scrolled {
@@ -49,12 +48,13 @@ body, .sb-root {
 }
 
 .sb-logo {
-  height: 64px; /* logo plus gros */
-  transition: all .4s ease, opacity .3s ease;
+  height: 64px; /* taille de base */
+  transition: transform .4s ease, opacity .3s ease;
+  transform-origin: left center; /* ancrage à gauche pour éviter le décalage */
 }
 
 .sb-header--scrolled .sb-logo {
-  height: 40px; /* shrink au scroll */
+  transform: scale(0.65); /* dézoom fluide */
 }
 
 .sb-cta {
