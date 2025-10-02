@@ -176,15 +176,29 @@ body, .sb-root {
 export default function SenseiBurritoSite() {
   const [scrolled, setScrolled] = useState(false);
 
+  // Déjà existant : effet pour gérer le scroll
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // 🚀 Nouveau : forcer la lecture vidéo
+  useEffect(() => {
+    const video = document.querySelector(".sb-hero__video");
+    if (video) {
+      video.play().catch(() => {
+        console.log("Lecture auto bloquée, fallback à l’image statique.");
+      });
+    }
+  }, []);
+
   return (
     <div className="sb-root">
-      <style>{globalCss}</style>
+      {/* ton JSX habituel */}
+    </div>
+  );
+}
 
       {/* HEADER */}
       <header className={`sb-header ${scrolled ? "sb-header--scrolled" : ""}`}>
@@ -268,7 +282,12 @@ export default function SenseiBurritoSite() {
       {/* HISTOIRE */}
       <section id="histoire" className="sb-section sb-section--alt">
         <div className="sb-container sb-split">
-          <div className="sb-split__media"></div>
+          <div className="sb-split__media">
+            <video autoPlay muted loop playsInline style={{ width: "100%", borderRadius: "12px" }}>
+              <source src="/enso_rotation_1.mp4" type="video/mp4" />
+              Votre navigateur ne supporte pas la vidéo.
+            </video>
+          </div>
           <div className="sb-split__text">
             <h2 className="sb-h2">Notre Histoire</h2>
             <p>
