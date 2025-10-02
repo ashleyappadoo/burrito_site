@@ -31,7 +31,7 @@ body, .sb-root {
   width: 100%;
   z-index: 1000;
   transition: all .4s ease, opacity .4s ease;
-  background: rgba(0,0,0,0.85);
+  background: #000; /* noir opaque */
 }
 
 .sb-header__inner {
@@ -45,10 +45,10 @@ body, .sb-root {
 }
 
 .sb-header--scrolled {
-  background: rgba(0,0,0,0.75);
+  background: #000; /* toujours noir */
   box-shadow: 0 2px 10px rgba(0,0,0,.5);
   padding: 6px 20px;
-  opacity: 0.95;
+  opacity: 0.95; /* léger effet de transparence au scroll */
 }
 
 .sb-logo {
@@ -60,6 +60,7 @@ body, .sb-root {
 .sb-header--scrolled .sb-logo {
   transform: scale(0.7);
 }
+
 
 /* CTA desktop */
 .sb-cta {
