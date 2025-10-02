@@ -84,25 +84,48 @@ body, .sb-root {
 .sb-btn--dark { background: #000; color: #fff; border: 1px solid var(--gold); }
 .sb-btn--dark:hover { background: #111; color: var(--gold); }
 
-/* CTA mobile */
+/* CTA mobile fix */
 @media (max-width: 768px) {
   .sb-header__inner {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 6px;
   }
-  .sb-cta {
-    justify-content: center;
-    width: 100%;
-    gap: 8px;
+
+  /* Le logo reste visible uniquement quand pas scrollé */
+  .sb-logo {
+    display: block;
+    height: 36px;
+    margin-bottom: 4px;
   }
+  .sb-header--scrolled .sb-logo {
+    display: none; /* logo disparaît au scroll */
+  }
+
+  /* CTA restent centrés */
+  .sb-cta {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  /* Boutons plus compacts en mobile */
   .sb-btn {
     padding: 6px 10px;
     font-size: 13px;
   }
-  .sb-logo {
-    height: 40px;
+
+  /* Header shrink mobile */
+  .sb-header {
+    padding: 6px 12px;
+  }
+  .sb-header--scrolled {
+    padding: 4px 10px;
   }
 }
+
 
 /* ================= HERO ================= */
 .sb-hero {
