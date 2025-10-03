@@ -271,10 +271,9 @@ export default function SenseiBurritoSite() {
           <p className="sb-hero__tagline">
             Une cuisine de caractère, des gestes précis, des saveurs franches. Bienvenue chez Sensei Burrito – l'alliance chic du burrito et de l'esprit dojo.
           </p>
-          <div className="sb-hero__actions">
-            <a className="sb-btn sb-btn--gold" href="#delivery">Menu</a>
-          </div>
-          <div className="sb-hero__actions">
+          {/* 🚀 1 seul conteneur flex pour Menu + Livraison */}
+          <div className="sb-hero__actions" style={{ display: "flex", gap: "12px", justifyContent: "center" }}>
+            <a className="sb-btn sb-btn--gold" href="#menu">Menu</a>
             <a className="sb-btn sb-btn--dark" href="#delivery">Livraison</a>
           </div>
           <ul className="sb-hero__badges">
