@@ -250,9 +250,9 @@ export default function SenseiBurritoSite() {
             <img src="/logo_png.png" alt="Sensei Burrito" className="sb-logo" />
           </a>
           <nav className="sb-cta">
-            <a className="sb-btn sb-btn--gold" href="#collect">Click & Collect</a>
+            <a className="sb-btn sb-btn--gold" href="#collect">A Emporter</a>
             <a className="sb-btn sb-btn--dark" href="#delivery">Livraison</a>
-            <a className="sb-btn sb-btn--gold" href="#reservation">Réservation</a>
+            <a className="sb-btn sb-btn--gold" href="#reservation">Sur Place</a>
           </nav>
         </div>
       </header>
@@ -272,7 +272,10 @@ export default function SenseiBurritoSite() {
             Une cuisine de caractère, des gestes précis, des saveurs franches. Bienvenue chez Sensei Burrito – l'alliance chic du burrito et de l'esprit dojo.
           </p>
           <div className="sb-hero__actions">
-            <a className="sb-btn sb-btn--gold" href="#delivery">Commander sur Uber Eats</a>
+            <a className="sb-btn sb-btn--gold" href="#delivery">Menu</a>
+          </div>
+          <div className="sb-hero__actions">
+            <a className="sb-btn sb-btn--dark" href="#delivery">Livraison</a>
           </div>
           <ul className="sb-hero__badges">
             <li>🌮 Tortillas maison</li>
