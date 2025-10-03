@@ -145,6 +145,15 @@ body, .sb-root {
   z-index: 0;
 }
 
+/* Supprimer le bouton play par défaut sur iOS Safari */
+.sb-hero__video::-webkit-media-controls {
+  display: none !important;
+}
+
+.sb-hero__video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
 .sb-hero__overlay {
   position: absolute;
   inset: 0;
@@ -274,7 +283,16 @@ export default function SenseiBurritoSite() {
 
       {/* HERO */}
       <section id="top" className="sb-hero">
-        <video className="sb-hero__video" autoPlay muted loop playsInline>
+        <video 
+          className="sb-hero__video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"   // optimisation
+          webkit-playsinline="true" // Safari iOS
+          x5-playsinline="true"     // WeChat/Android
+        >
           <source src="/DOP_enso_rotation.mp4" type="video/mp4" />
         </video>
         <div className="sb-hero__overlay sb-hero__overlay--gradient" />
