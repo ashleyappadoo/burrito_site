@@ -31,7 +31,7 @@ body, .sb-root {
   width: 100%;
   z-index: 1000;
   transition: all .4s ease, opacity .4s ease;
-  background: #000; /* noir opaque */
+  background: #000;
 }
 
 .sb-header__inner {
@@ -45,10 +45,10 @@ body, .sb-root {
 }
 
 .sb-header--scrolled {
-  background: #000; /* toujours noir */
+  background: #000;
   box-shadow: 0 2px 10px rgba(0,0,0,.5);
   padding: 6px 20px;
-  opacity: 0.95; /* léger effet de transparence au scroll */
+  opacity: 0.95;
 }
 
 .sb-logo {
@@ -56,11 +56,7 @@ body, .sb-root {
   transition: transform .4s ease, opacity .3s ease;
   transform-origin: left center;
 }
-
-.sb-header--scrolled .sb-logo {
-  transform: scale(0.7);
-}
-
+.sb-header--scrolled .sb-logo { transform: scale(0.7); }
 
 /* CTA desktop */
 .sb-cta {
@@ -92,40 +88,13 @@ body, .sb-root {
     align-items: center;
     gap: 6px;
   }
-
-  /* Le logo reste visible uniquement quand pas scrollé */
-  .sb-logo {
-    display: block;
-    height: 36px;
-    margin-bottom: 4px;
-  }
-  .sb-header--scrolled .sb-logo {
-    display: none; /* logo disparaît au scroll */
-  }
-
-  /* CTA restent centrés */
-  .sb-cta {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
-  }
-
-  /* Boutons plus compacts en mobile */
-  .sb-btn {
-    padding: 6px 10px;
-    font-size: 13px;
-  }
-
-  /* Header shrink mobile */
-  .sb-header {
-    padding: 6px 12px;
-  }
-  .sb-header--scrolled {
-    padding: 4px 10px;
-  }
+  .sb-logo { display: block; height: 36px; margin-bottom: 4px; }
+  .sb-header--scrolled .sb-logo { display: none; }
+  .sb-cta { justify-content: center; gap: 8px; width: 100%; }
+  .sb-btn { padding: 6px 10px; font-size: 13px; }
+  .sb-header { padding: 6px 12px; }
+  .sb-header--scrolled { padding: 4px 10px; }
 }
-
 
 /* ================= HERO ================= */
 .sb-hero {
@@ -145,63 +114,70 @@ body, .sb-root {
   z-index: 0;
 }
 
-/* Supprimer le bouton play par défaut sur iOS Safari */
-.sb-hero__video::-webkit-media-controls {
-  display: none !important;
-}
+/* Supprimer bouton play iOS */
+.sb-hero__video::-webkit-media-controls { display: none !important; }
+.sb-hero__video::-webkit-media-controls-enclosure { display: none !important; }
 
-.sb-hero__video::-webkit-media-controls-enclosure {
-  display: none !important;
-}
-
-.sb-hero__overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-}
-
-.sb-hero__overlay--gradient {
-  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6));
-}
-
+.sb-hero__overlay { position: absolute; inset: 0; z-index: 1; }
+.sb-hero__overlay--gradient { background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6)); }
 .sb-hero__overlay--grid {
   background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 
-.sb-hero__content {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-  padding: 0 16px;
-}
-
-.sb-hero__title {
-  font-family: var(--font-title);
-  font-size: 44px;
-  margin: 0 0 16px;
-}
-
-.sb-hero__tagline {
-  font-size: 18px;
-  color: var(--muted);
-}
-
-.sb-hero__actions {
-  margin-top: 20px;
-}
-
+.sb-hero__content { position: relative; z-index: 2; max-width: 800px; padding: 0 16px; }
+.sb-hero__title { font-family: var(--font-title); font-size: 44px; margin: 0 0 16px; }
+.sb-hero__tagline { font-size: 18px; color: var(--muted); }
+.sb-hero__actions { margin-top: 20px; }
 .sb-hero__badges {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  margin-top: 20px;
-  font-size: 14px;
-  color: var(--muted);
+  list-style: none; padding: 0; display: flex; gap: 16px;
+  justify-content: center; margin-top: 20px; font-size: 14px; color: var(--muted);
 }
+
+/* ================= MODAL (Menu PDF) ================= */
+.sb-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+.sb-modal__content {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  height: 90%;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  animation: slideUp 0.3s ease-in-out;
+}
+.sb-modal__close {
+  position: absolute;
+  top: 10px; right: 10px;
+  background: #000; color: #fff;
+  border: none; border-radius: 50%;
+  width: 32px; height: 32px;
+  font-size: 18px; cursor: pointer;
+}
+.sb-modal__close:hover { background: var(--gold); color: #000; }
+
+/* Version mobile : plein écran */
+@media (max-width: 768px) {
+  .sb-modal__content {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { transform: translateY(40px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
 /* ================= SECTIONS ================= */
 .sb-section { padding: 100px 20px 80px; }
@@ -232,6 +208,7 @@ body, .sb-root {
 
 export default function SenseiBurritoSite() {
   const [scrolled, setScrolled] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -249,10 +226,7 @@ export default function SenseiBurritoSite() {
       });
     };
 
-  // Tentative auto
     tryPlay();
-
-  // Déclenche si l'utilisateur scroll ou clique
     document.addEventListener("touchstart", tryPlay, { once: true });
     document.addEventListener("scroll", tryPlay, { once: true });
 
@@ -261,7 +235,6 @@ export default function SenseiBurritoSite() {
       document.removeEventListener("scroll", tryPlay);
     };
   }, []);
-
 
   return (
     <div className="sb-root">
@@ -289,9 +262,9 @@ export default function SenseiBurritoSite() {
           muted
           loop
           playsInline
-          preload="auto"   // optimisation
-          webkit-playsinline="true" // Safari iOS
-          x5-playsinline="true"     // WeChat/Android
+          preload="auto"
+          webkit-playsinline="true"
+          x5-playsinline="true"
         >
           <source src="/DOP_enso_rotation.mp4" type="video/mp4" />
         </video>
@@ -304,9 +277,8 @@ export default function SenseiBurritoSite() {
           <p className="sb-hero__tagline">
             Une cuisine de caractère, des gestes précis, des saveurs franches. Bienvenue chez Sensei Burrito – l'alliance chic du burrito et de l'esprit dojo.
           </p>
-          {/* 🚀 1 seul conteneur flex pour Menu + Livraison */}
           <div className="sb-hero__actions" style={{ display: "flex", gap: "12px", justifyContent: "center" }}>
-            <a className="sb-btn sb-btn--gold" href="#menu">Menu</a>
+            <button className="sb-btn sb-btn--gold" onClick={() => setShowMenu(true)}>Menu</button>
             <a className="sb-btn sb-btn--dark" href="#delivery">Livraison</a>
           </div>
           <ul className="sb-hero__badges">
@@ -316,6 +288,22 @@ export default function SenseiBurritoSite() {
           </ul>
         </div>
       </section>
+
+      {/* MODAL PDF */}
+      {showMenu && (
+        <div className="sb-modal" onClick={() => setShowMenu(false)}>
+          <div className="sb-modal__content" onClick={e => e.stopPropagation()}>
+            <button className="sb-modal__close" onClick={() => setShowMenu(false)}>✕</button>
+            <iframe
+              src="/menu-sensei.pdf"
+              title="Menu Sensei Burrito"
+              width="100%"
+              height="100%"
+              style={{ border: "none" }}
+            />
+          </div>
+        </div>
+      )}
 
       {/* CONCEPT */}
       <section id="concept" className="sb-section">
