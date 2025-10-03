@@ -232,12 +232,27 @@ export default function SenseiBurritoSite() {
 
   useEffect(() => {
     const video = document.querySelector(".sb-hero__video");
-    if (video) {
+    if (!video) return;
+
+    const tryPlay = () => {
       video.play().catch(() => {
-        console.log("Lecture auto bloquée, fallback à l’image statique.");
+        console.log("Lecture auto bloquée, attente interaction utilisateur.");
       });
-    }
+    };
+
+  // Tentative auto
+    tryPlay();
+
+  // Déclenche si l'utilisateur scroll ou clique
+    document.addEventListener("touchstart", tryPlay, { once: true });
+    document.addEventListener("scroll", tryPlay, { once: true });
+
+    return () => {
+      document.removeEventListener("touchstart", tryPlay);
+      document.removeEventListener("scroll", tryPlay);
+    };
   }, []);
+
 
   return (
     <div className="sb-root">
