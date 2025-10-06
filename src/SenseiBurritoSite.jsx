@@ -513,27 +513,27 @@ export default function SenseiBurritoSite() {
 
       {/* NOUS CONTACTER */}
       <section id="contact" className="sb-section sb-contact">
-        <div className="sb-contact__info">
-          <h2 className="sb-h2">Nous Contacter</h2>        
+        {/* ✅ Titre centré et unique */}
+        <h2 className="sb-h2" style={{ textAlign: "center", marginBottom: "40px" }}>
+          Nous Contacter
+        </h2>
+      
         <div className="sb-container sb-split">
           {/* Google Maps */}
           <div className="sb-contact__map">
-            {/* 🔒 Clé Google Maps à insérer dans l'URL */}
             <iframe
               title="Localisation Sensei Burrito"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.8510386015645!2d2.346145!3d48.865102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e19f6ed54bb%3A0x2d432e492b98c2c!2sRue%20Tiquetonne%2C%2075002%20Paris!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr"
               width="100%"
-              height="350"
+              height="420"
               style={{ border: 0, borderRadius: "12px" }}
               allowFullScreen=""
               loading="lazy"
             ></iframe>
           </div>
       
-          {/* Infos & Avis */}
+          {/* Coordonnées + Avis Google */}
           <div className="sb-contact__info">
-            <h2 className="sb-h2">Nous Contacter</h2>
-      
             {/* Coordonnées */}
             <div className="sb-contact__details">
               <p>
@@ -541,7 +541,10 @@ export default function SenseiBurritoSite() {
               </p>
               <p>
                 <span className="gold">✉️</span>{" "}
-                <a href="mailto:contact@senseiburrito.fr" className="sb-contact__link">
+                <a
+                  href="mailto:contact@senseiburrito.fr"
+                  className="sb-contact__link"
+                >
                   contact@senseiburrito.fr
                 </a>
               </p>
@@ -550,7 +553,6 @@ export default function SenseiBurritoSite() {
             {/* Avis Google */}
             <div className="sb-contact__reviews">
               <h3>Avis Google</h3>
-              {/* 🔒 Ici tu pourras intégrer la Google My Business Review API */}
               <div className="sb-review">
                 ⭐⭐⭐⭐⭐ "Excellent burrito, ambiance zen et service rapide !"
               </div>
@@ -564,6 +566,7 @@ export default function SenseiBurritoSite() {
           </div>
         </div>
       </section>
+
 
 
       {/* FOOTER */}
