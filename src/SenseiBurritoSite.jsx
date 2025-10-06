@@ -171,6 +171,21 @@ body, .sb-root {
   gap: 12px;
 }
 
+/* ================= HERO BADGES ================= */
+.sb-hero__badges {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;  /* forcer en ligne */
+  justify-content: center;
+  align-items: center;
+  gap: 24px; /* espacement entre les éléments */
+  font-size: 14px;
+  color: var(--muted);
+}
+
+
 /* ================= SECTIONS ================= */
 .sb-section { padding: 100px 20px 80px; }
 .sb-h2 { font-family: var(--font-title); font-size: 32px; margin-bottom: 12px; text-align: center; }
