@@ -244,6 +244,18 @@ body, .sb-root {
 .sb-footer__social a { margin:0 8px; color:var(--muted); text-decoration:none; }
 .sb-footer__social a:hover { color:var(--gold); }
 
+/* Masquer le bloc CTA bas de page par défaut (desktop) */
+.sb-bottom-cta {
+  display: none;
+}
+
+/* Afficher uniquement sur mobile */
+@media (max-width: 768px) {
+  .sb-bottom-cta {
+    display: flex;
+  }
+}
+
 /* ================= LIGHTBOX ================= */
 .sb-lightbox {
   position: fixed;
