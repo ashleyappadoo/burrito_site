@@ -82,34 +82,52 @@ body, .sb-root {
 .sb-btn--dark { background: #000; color: #fff; border: 1px solid var(--gold); }
 .sb-btn--dark:hover { background: #111; color: var(--gold); }
 
-/* CTA mobile */
+/* ================= MOBILE HEADER + BOTTOM CTA ================= */
 @media (max-width: 768px) {
+
+  /* Header uniquement avec logo */
   .sb-header__inner {
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 6px;
+    padding: 8px 0;
   }
 
   .sb-logo {
-    height: 36px;
-    margin-bottom: 4px;
+    height: 40px;
+    transition: transform .3s ease;
   }
+
   .sb-header--scrolled .sb-logo {
+    transform: scale(0.8);
+  }
+
+  /* Masquer les CTA du header */
+  .sb-header .sb-cta {
     display: none;
   }
 
-  .sb-cta {
-    justify-content: center;
-    gap: 8px;
+  /* Boutons fixes en bas de l’écran */
+  .sb-bottom-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
     width: 100%;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 0;
+    z-index: 999;
+    backdrop-filter: blur(4px);
   }
 
-  .sb-btn {
-    padding: 6px 10px;
-    font-size: 13px;
+  .sb-bottom-cta .sb-btn {
+    padding: 8px 14px;
+    font-size: 14px;
+    border-radius: 8px;
   }
 }
+
 
 /* ================= HERO ================= */
 .sb-hero {
@@ -383,6 +401,13 @@ export default function SenseiBurritoSite() {
           </nav>
         </div>
       </footer>
+
+      {/* CTA BAS DE PAGE MOBILE */}
+      <div className="sb-bottom-cta">
+        <a className="sb-btn sb-btn--gold" href="#collect">A Emporter</a>
+        <a className="sb-btn sb-btn--dark" href="#delivery">Livraison</a>
+        <a className="sb-btn sb-btn--gold" href="#reservation">Sur Place</a>
+      </div>
     </div>
   );
 }
