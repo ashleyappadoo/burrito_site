@@ -260,6 +260,66 @@ body, .sb-root {
 }
 @media(max-width:900px){.sb-split{grid-template-columns:1fr}}
 
+/* ================= CONTACT ================= */
+.sb-contact__map iframe {
+  width: 100%;
+  height: 350px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.sb-contact__info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sb-contact__details p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+}
+
+.sb-contact__link {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.sb-contact__link:hover {
+  color: var(--gold);
+}
+
+.sb-contact__reviews {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 20px;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.sb-contact__reviews h3 {
+  color: var(--gold);
+  margin-top: 0;
+  font-family: var(--font-title);
+}
+
+.sb-review {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+@media (max-width: 900px) {
+  .sb-contact .sb-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 /* ================= FOOTER ================= */
 .sb-footer { background:#000; padding:40px 20px; text-align:center; border-top:1px solid var(--line); }
 .sb-footer__inner { max-width:1200px; margin:0 auto; display:flex; flex-direction:column; gap:12px; align-items:center; }
@@ -435,6 +495,59 @@ export default function SenseiBurritoSite() {
           </div>
         </div>
       </section>
+
+      {/* NOUS CONTACTER */}
+      <section id="contact" className="sb-section sb-contact">
+        <div className="sb-container sb-split">
+          {/* Google Maps */}
+          <div className="sb-contact__map">
+            {/* 🔒 Clé Google Maps à insérer dans l'URL */}
+            <iframe
+              title="Localisation Sensei Burrito"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.8510386015645!2d2.346145!3d48.865102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e19f6ed54bb%3A0x2d432e492b98c2c!2sRue%20Tiquetonne%2C%2075002%20Paris!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr"
+              width="100%"
+              height="350"
+              style={{ border: 0, borderRadius: "12px" }}
+              allowFullScreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+      
+          {/* Infos & Avis */}
+          <div className="sb-contact__info">
+            <h2 className="sb-h2">Nous Contacter</h2>
+      
+            {/* Coordonnées */}
+            <div className="sb-contact__details">
+              <p>
+                <span className="gold">📞</span> 01 42 36 XX XX
+              </p>
+              <p>
+                <span className="gold">✉️</span>{" "}
+                <a href="mailto:contact@senseiburrito.fr" className="sb-contact__link">
+                  contact@senseiburrito.fr
+                </a>
+              </p>
+            </div>
+      
+            {/* Avis Google */}
+            <div className="sb-contact__reviews">
+              <h3>Avis Google</h3>
+              {/* 🔒 Ici tu pourras intégrer la Google My Business Review API */}
+              <div className="sb-review">
+                ⭐⭐⭐⭐⭐ "Excellent burrito, ambiance zen et service rapide !"
+              </div>
+              <div className="sb-review">
+                ⭐⭐⭐⭐⭐ "Un concept original et des saveurs maîtrisées, je recommande !"
+              </div>
+              <div className="sb-review">
+                ⭐⭐⭐⭐ "Lieu très sympa, belle présentation et plats copieux."
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* FOOTER */}
       <footer className="sb-footer">
