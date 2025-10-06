@@ -541,7 +541,7 @@ export default function SenseiBurritoSite() {
           <div className="sb-contact__map">
             <iframe
               title="Localisation Sensei Burrito"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.8510386015645!2d2.346145!3d48.865102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e19f6ed54bb%3A0x2d432e492b98c2c!2sRue%20Tiquetonne%2C%2075002%20Paris!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.653502124948!2d2.3444943753156497!3d48.864817400255745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1846fc4bc1%3A0xd44827153cf70dd1!2s48%20Rue%20Tiquetonne%2C%2075002%20Paris!5e0!3m2!1sen!2sfr!4v1759778413682!5m2!1sen!2sfr"
               width="100%"
               height="420"
               style={{ border: 0, borderRadius: "12px" }}
