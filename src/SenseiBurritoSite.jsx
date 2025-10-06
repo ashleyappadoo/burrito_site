@@ -85,20 +85,33 @@ body, .sb-root {
 /* ================= MOBILE HEADER + BOTTOM CTA ================= */
 @media (max-width: 768px) {
 
-  /* Header uniquement avec logo */
+  /* HEADER mobile uniquement */
+  .sb-header {
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .sb-header--scrolled {
+    padding: 6px 0;
+  }
+
   .sb-header__inner {
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 8px 0;
+    gap: 6px;
   }
 
   .sb-logo {
-    height: 40px;
-    transition: transform .3s ease;
+    height: 42px;
+    margin: 0 auto;
+    display: block;
+    transition: all .4s ease;
   }
 
   .sb-header--scrolled .sb-logo {
-    transform: scale(0.8);
+    height: 32px; /* rétrécit légèrement au scroll */
+    transform: none; /* supprime le décalage */
   }
 
   /* Masquer les CTA du header */
@@ -106,7 +119,7 @@ body, .sb-root {
     display: none;
   }
 
-  /* Boutons fixes en bas de l’écran */
+  /* CTA fixes en bas d’écran */
   .sb-bottom-cta {
     position: fixed;
     bottom: 0;
@@ -127,6 +140,7 @@ body, .sb-root {
     border-radius: 8px;
   }
 }
+
 
 
 /* ================= HERO ================= */
