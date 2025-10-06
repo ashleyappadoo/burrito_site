@@ -265,13 +265,13 @@ body, .sb-root {
 
 /* Réduit l’espace avant la section contact */
 #contact.sb-section {
-  padding-top: 40px;
-  margin-top: -30px; /* compact mais harmonieux */
+  padding-top: 20px;
+  margin-top: -40px; /* compact mais harmonieux */
 }
 
 /* Réduit aussi l’espace après “Notre Histoire” */
 #histoire {
-  margin-bottom: 10px; /* rapproche les sections */
+  margin-bottom: 0; /* rapproche les sections */
 }
 
 
