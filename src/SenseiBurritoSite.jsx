@@ -260,10 +260,25 @@ body, .sb-root {
 }
 @media(max-width:900px){.sb-split{grid-template-columns:1fr}}
 
+
+/* ================= REDUCTION ESPACE ENTRE SECTION HISTOIRE ET NOUS CONTACTER ================= */
+/* Réduit l’espace avant la section contact */
+#contact.sb-section {
+  padding-top: 40px;
+  margin-top: -20px;
+}
+
+/* Réduit aussi l’espace entre “Notre Histoire” et “Nous Contacter” */
+#histoire {
+  margin-bottom: 20px;
+}
+
+
 /* ================= CONTACT ================= */
 .sb-contact__map iframe {
   width: 100%;
-  height: 350px;
+  height: 100%;
+  min-height: 420px; /* s’aligne mieux sur les avis */
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
@@ -498,6 +513,8 @@ export default function SenseiBurritoSite() {
 
       {/* NOUS CONTACTER */}
       <section id="contact" className="sb-section sb-contact">
+        <div className="sb-contact__info">
+          <h2 className="sb-h2">Nous Contacter</h2>        
         <div className="sb-container sb-split">
           {/* Google Maps */}
           <div className="sb-contact__map">
