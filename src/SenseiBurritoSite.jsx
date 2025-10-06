@@ -337,9 +337,20 @@ body, .sb-root {
     gap: 24px;
   }
 
-  .sb-contact__map iframe {
-    min-height: 300px;
-  }
+.sb-contact__map {
+  display: flex;
+  align-items: stretch;
+}
+
+.sb-contact__map iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 520px; /* correspond mieux à la hauteur du bloc de droite */
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  object-fit: cover;
+}
+
 
   #contact.sb-section {
     margin-top: -10px;
