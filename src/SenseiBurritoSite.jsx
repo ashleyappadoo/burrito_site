@@ -261,24 +261,24 @@ body, .sb-root {
 @media(max-width:900px){.sb-split{grid-template-columns:1fr}}
 
 
-/* ================= REDUCTION ESPACE ENTRE SECTION HISTOIRE ET NOUS CONTACTER ================= */
+/* ================= RÉDUCTION ESPACE ENTRE SECTION HISTOIRE ET NOUS CONTACTER ================= */
+
 /* Réduit l’espace avant la section contact */
 #contact.sb-section {
   padding-top: 40px;
-  margin-top: -20px;
+  margin-top: -30px; /* un peu plus marqué pour aligner visuellement */
 }
 
-/* Réduit aussi l’espace entre “Notre Histoire” et “Nous Contacter” */
+/* Réduit aussi l’espace après “Notre Histoire” */
 #histoire {
-  margin-bottom: 20px;
+  margin-bottom: 10px; /* encore plus compact */
 }
 
-
-/* ================= CONTACT ================= */
+/* ================= SECTION CONTACT ================= */
 .sb-contact__map iframe {
   width: 100%;
   height: 100%;
-  min-height: 420px; /* s’aligne mieux sur les avis */
+  min-height: 420px;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
@@ -286,11 +286,13 @@ body, .sb-root {
 .sb-contact__info {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  justify-content: space-between;
+  gap: 28px;
 }
 
+/* Coordonnées */
 .sb-contact__details p {
-  margin: 0;
+  margin: 0 0 8px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -301,24 +303,24 @@ body, .sb-root {
   color: var(--text);
   text-decoration: none;
 }
-
 .sb-contact__link:hover {
   color: var(--gold);
 }
 
+/* Avis Google */
 .sb-contact__reviews {
   background: #111;
   border: 1px solid #222;
   border-radius: 12px;
   padding: 20px;
-  max-height: 200px;
-  overflow-y: auto;
+  height: 100%;
   box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
 
 .sb-contact__reviews h3 {
   color: var(--gold);
   margin-top: 0;
+  margin-bottom: 12px;
   font-family: var(--font-title);
 }
 
@@ -328,9 +330,19 @@ body, .sb-root {
   margin-bottom: 10px;
 }
 
+/* Responsive : empilement vertical sur mobile */
 @media (max-width: 900px) {
   .sb-contact .sb-container {
     grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .sb-contact__map iframe {
+    min-height: 300px;
+  }
+
+  #contact.sb-section {
+    margin-top: -10px;
   }
 }
 
