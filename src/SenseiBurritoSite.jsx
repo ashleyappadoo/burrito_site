@@ -219,7 +219,13 @@ body, .sb-root {
 
 
 /* ================= SECTIONS ================= */
-.sb-section { padding: 100px 20px 80px; }
+.sb-section {
+  padding: 60px 20px; /* espace réduit en haut et en bas */
+}
+
+.sb-section + .sb-section {
+  margin-top: -30px; /* réduit l'espace entre deux sections successives */
+}
 .sb-h2 { font-family: var(--font-title); font-size: 32px; margin-bottom: 12px; text-align: center; }
 .sb-lead { text-align: center; color: var(--muted); max-width: 700px; margin: 0 auto 40px; }
 
@@ -234,7 +240,24 @@ body, .sb-root {
 .sb-card-img__body p { margin:0; color:var(--muted); font-size:15px; line-height:1.4; }
 
 /* ================= SPLIT ================= */
-.sb-split { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; max-width:1200px; margin:0 auto; }
+.sb-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 0; /* équilibre l'espacement interne */
+}
+
+.sb-split__media video {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  aspect-ratio: 16 / 9; /* garantit un cadrage harmonieux */
+  display: block;
+}
 @media(max-width:900px){.sb-split{grid-template-columns:1fr}}
 
 /* ================= FOOTER ================= */
