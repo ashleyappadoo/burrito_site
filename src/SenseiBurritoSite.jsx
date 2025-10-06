@@ -266,21 +266,28 @@ body, .sb-root {
 /* Réduit l’espace avant la section contact */
 #contact.sb-section {
   padding-top: 40px;
-  margin-top: -30px; /* un peu plus marqué pour aligner visuellement */
+  margin-top: -30px; /* compact mais harmonieux */
 }
 
 /* Réduit aussi l’espace après “Notre Histoire” */
 #histoire {
-  margin-bottom: 10px; /* encore plus compact */
+  margin-bottom: 10px; /* rapproche les sections */
 }
 
+
 /* ================= SECTION CONTACT ================= */
+.sb-contact__map {
+  display: flex;
+  align-items: stretch;
+}
+
 .sb-contact__map iframe {
   width: 100%;
   height: 100%;
-  min-height: 420px;
+  min-height: 520px; /* hauteur ajustée pour cadrer avec les avis */
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  object-fit: cover;
 }
 
 .sb-contact__info {
@@ -337,26 +344,14 @@ body, .sb-root {
     gap: 24px;
   }
 
-.sb-contact__map {
-  display: flex;
-  align-items: stretch;
-}
-
-.sb-contact__map iframe {
-  width: 100%;
-  height: 100%;
-  min-height: 520px; /* correspond mieux à la hauteur du bloc de droite */
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-  object-fit: cover;
-}
-
-
   #contact.sb-section {
     margin-top: -10px;
   }
-}
 
+  .sb-contact__map iframe {
+    min-height: 420px;
+  }
+}
 
 /* ================= FOOTER ================= */
 .sb-footer { background:#000; padding:40px 20px; text-align:center; border-top:1px solid var(--line); }
