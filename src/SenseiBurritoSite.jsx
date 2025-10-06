@@ -373,7 +373,7 @@ export default function SenseiBurritoSite() {
       <footer className="sb-footer">
         <div className="sb-container sb-footer__inner">
           <div className="sb-footer__brand">
-            <img src="/logo-noir.png" alt="Sensei Burrito" />
+            <img src="/logo_png.png" alt="Sensei Burrito" />
           </div>
           <p>© {new Date().getFullYear()} Sensei Burrito — Tous droits réservés.</p>
           <nav className="sb-footer__social">
