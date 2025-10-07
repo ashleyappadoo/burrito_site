@@ -103,14 +103,14 @@ body, .sb-root {
   }
 
   .sb-logo {
-    height: 42px;
+    height: 82px;
     margin: 0 auto;
     display: block;
     transition: all .4s ease;
   }
 
   .sb-header--scrolled .sb-logo {
-    height: 32px; /* rétrécit légèrement au scroll */
+    height: 42px; /* rétrécit légèrement au scroll */
     transform: none; /* supprime le décalage */
   }
 
