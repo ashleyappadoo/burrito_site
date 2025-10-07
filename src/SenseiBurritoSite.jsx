@@ -51,7 +51,7 @@ body, .sb-root {
 }
 
 .sb-logo {
-  height: 52px;
+  height: 82px;
   transition: transform .4s ease, opacity .3s ease;
   transform-origin: left center;
 }
@@ -356,7 +356,7 @@ body, .sb-root {
 /* ================= FOOTER ================= */
 .sb-footer { background:#000; padding:40px 20px; text-align:center; border-top:1px solid var(--line); }
 .sb-footer__inner { max-width:1200px; margin:0 auto; display:flex; flex-direction:column; gap:12px; align-items:center; }
-.sb-footer__brand img { height:30px; margin-bottom:12px; }
+.sb-footer__brand img { height:82px; margin-bottom:12px; }
 .sb-footer__social a { margin:0 8px; color:var(--muted); text-decoration:none; }
 .sb-footer__social a:hover { color:var(--gold); }
 
