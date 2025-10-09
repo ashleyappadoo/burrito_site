@@ -604,7 +604,7 @@ export default function SenseiBurritoSite() {
             {/* Coordonnées */}
             <div className="sb-contact__details">
               <p>
-                <span className="gold">Contactez nous par email
+                  <span className="gold">Contactez-nous par email</span>
               </p>
               <p>
                 <span className="gold">✉️</span>{" "}
