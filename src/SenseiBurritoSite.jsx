@@ -422,14 +422,37 @@ export default function SenseiBurritoSite() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
+  /*Ancien use effet*/
+  /*useEffect(() => {
     const video = document.querySelector(".sb-hero__video");
     if (video) {
       video.play().catch(() => {
         console.log("Lecture auto bloquée, fallback image.");
       });
     }
-  }, []);
+  }, []);*/
+
+  /*Nouveau useEffect*/
+  useEffect(() => {
+  const video = document.querySelector(".sb-hero__video");
+  if (video) {
+    const playVideo = () => {
+      video.play().catch(() => {});
+    };
+
+    // essaie plusieurs méthodes
+    video.addEventListener("loadeddata", playVideo);
+    document.addEventListener("touchstart", playVideo, { once: true });
+    document.addEventListener("scroll", playVideo, { once: true });
+
+    return () => {
+      video.removeEventListener("loadeddata", playVideo);
+      document.removeEventListener("touchstart", playVideo);
+      document.removeEventListener("scroll", playVideo);
+    };
+  }
+}, []);
+/*-----------fin nouveau useEffect----------------*/
 
   return (
     <div className="sb-root">
@@ -451,7 +474,8 @@ export default function SenseiBurritoSite() {
 
       {/* HERO */}
       <section id="top" className="sb-hero">
-        <video className="sb-hero__video" autoPlay muted loop playsInline>
+        <video className="sb-hero__video" autoPlay muted loop playsInline webkit-playsinline="true"
+  preload="auto">
           <source src="/enso_rotation.mp4" type="video/mp4" />
         </video>
         <div className="sb-hero__overlay sb-hero__overlay--gradient" />
