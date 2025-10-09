@@ -585,7 +585,7 @@ export default function SenseiBurritoSite() {
             {/* Coordonnées */}
             <div className="sb-contact__details">
               <p>
-                <span className="gold">📞</span> 01 42 36 XX XX
+                <span className="gold">Contactez nous par email
               </p>
               <p>
                 <span className="gold">✉️</span>{" "}
