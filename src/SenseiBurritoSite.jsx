@@ -331,23 +331,30 @@ body, .sb-root {
   border: none;
   border-radius: 12px;
   overflow: hidden;
-  height: 400px; /* hauteur adaptée desktop */
+  height: 480px; /* augmente la hauteur pour voir tout le formulaire */
   box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  display: block;
 }
 
-/* ✅ Responsive : ajuste la taille automatiquement */
-@media (max-width: 900px) {
+/* Ajustement dynamique selon la taille d’écran */
+@media (max-width: 1024px) {
   .sb-newsletter-iframe {
-    height: 520px; /* augmente un peu la hauteur pour mobile */
-    max-width: 100%;
+    height: 520px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sb-newsletter-iframe {
+    height: 560px;
   }
 }
 
 @media (max-width: 480px) {
   .sb-newsletter-iframe {
-    height: 600px;
+    height: 640px;
   }
 }
+
 
 
 /* Ancien bloc avis (désactivé mais conservé) */
