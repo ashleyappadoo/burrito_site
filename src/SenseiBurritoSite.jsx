@@ -370,7 +370,16 @@ body, .sb-root {
   .sb-bottom-cta {
     display: flex;
   }
+} 
+
+/* --- Ajustement hero en mobiel --- */
+@media (max-width: 768px) {
+  /* Décale le hero vers le bas pour ne pas être masqué par le header fixe */
+  .sb-hero {
+    padding-top: 80px; /* ajuste selon la taille du header mobile */
+  }
 }
+
 
 /* ================= LIGHTBOX ================= */
 .sb-lightbox {
