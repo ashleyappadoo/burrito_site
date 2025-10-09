@@ -564,17 +564,14 @@ export default function SenseiBurritoSite() {
 
       {/* NOUS CONTACTER */}
       <section id="contact" className="sb-section sb-contact">
-        {/* ✅ Titre centré et unique */}
-        <h2 className="sb-h2" style={{ textAlign: "center", marginBottom: "40px" }}>
-          Nous Contacter
-        </h2>
-      
+        <h2 className="sb-h2">Nous Contacter</h2>
         <div className="sb-container sb-split">
+          
           {/* Google Maps */}
           <div className="sb-contact__map">
             <iframe
               title="Localisation Sensei Burrito"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.653502124948!2d2.3444943753156497!3d48.864817400255745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1846fc4bc1%3A0xd44827153cf70dd1!2s48%20Rue%20Tiquetonne%2C%2075002%20Paris!5e0!3m2!1sen!2sfr!4v1759778413682!5m2!1sen!2sfr"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.8510386015645!2d2.346145!3d48.865102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e19f6ed54bb%3A0x2d432e492b98c2c!2sRue%20Tiquetonne%2C%2075002%20Paris!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr"
               width="100%"
               height="420"
               style={{ border: 0, borderRadius: "12px" }}
@@ -583,7 +580,7 @@ export default function SenseiBurritoSite() {
             ></iframe>
           </div>
       
-          {/* Coordonnées + Avis Google */}
+          {/* Coordonnées & Newsletter */}
           <div className="sb-contact__info">
             {/* Coordonnées */}
             <div className="sb-contact__details">
@@ -592,28 +589,44 @@ export default function SenseiBurritoSite() {
               </p>
               <p>
                 <span className="gold">✉️</span>{" "}
-                <a
-                  href="mailto:contact@senseiburrito.fr"
-                  className="sb-contact__link"
-                >
+                <a href="mailto:contact@senseiburrito.fr" className="sb-contact__link">
                   contact@senseiburrito.fr
                 </a>
               </p>
             </div>
       
-            {/* Avis Google */}
-            <div className="sb-contact__reviews">
-              <h3>Avis Google</h3>
-              <div className="sb-review">
-                ⭐⭐⭐⭐⭐ "Excellent burrito, ambiance zen et service rapide !"
-              </div>
-              <div className="sb-review">
-                ⭐⭐⭐⭐⭐ "Un concept original et des saveurs maîtrisées, je recommande !"
-              </div>
-              <div className="sb-review">
-                ⭐⭐⭐⭐ "Lieu très sympa, belle présentation et plats copieux."
+            {/* === NEWSLETTER BREVO === */}
+            <div className="sb-contact__newsletter">
+              <div className="sib-form" style={{ textAlign: "center", backgroundColor: "transparent" }}>
+                <iframe
+                  title="Sensei Letter"
+                  width="540"
+                  height="305"
+                  src="https://f8bf683e.sibforms.com/serve/MUIFAPlmjYo9sI-uV4VY8ExdOAlrIJD9fRuMIfw31_oNc_BUSKSNn8SWlkyTtHT408z-p216BDHEXzihYJGZZaiL52wMmJ5uoJSLKZLFY04p_QogjAoQUgzA7toxQw3CcnYdS5dJF2RXLLtWg9b1igqcZY_eU-ga1OHJZKBxyRJOpCRRYftVGd5lRqiUXgXllzO8MHrvQyhiN7vK"
+                  frameBorder="0"
+                  scrolling="auto"
+                  allowFullScreen
+                  style={{
+                    display: "block",
+                    marginLeft: "auto",
+                    marginRight: "auto",
+                    maxWidth: "100%",
+                    borderRadius: "12px",
+                    boxShadow: "0 8px 20px rgba(0,0,0,0.4)",
+                  }}
+                ></iframe>
               </div>
             </div>
+      
+            {/* === Ancienne section Avis Google (désactivée) === */}
+            {/*
+            <div className="sb-contact__reviews">
+              <h3>Avis Google</h3>
+              <div className="sb-review">⭐⭐⭐⭐⭐ "Excellent burrito, ambiance zen et service rapide !"</div>
+              <div className="sb-review">⭐⭐⭐⭐⭐ "Un concept original et des saveurs maîtrisées, je recommande !"</div>
+              <div className="sb-review">⭐⭐⭐⭐ "Lieu très sympa, belle présentation et plats copieux."</div>
+            </div>
+            */}
           </div>
         </div>
       </section>
