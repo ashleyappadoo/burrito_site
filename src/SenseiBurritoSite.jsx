@@ -276,18 +276,21 @@ body, .sb-root {
 
 
 /* ================= SECTION CONTACT ================= */
-.sb-contact__map {
-  display: flex;
-  align-items: stretch;
+#contact.sb-section {
+  padding-top: 40px;
+  margin-top: -30px;
+}
+
+#histoire {
+  margin-bottom: 10px;
 }
 
 .sb-contact__map iframe {
   width: 100%;
   height: 100%;
-  min-height: 520px; /* hauteur ajustée pour cadrer avec les avis */
+  min-height: 420px;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
 .sb-contact__info {
@@ -297,7 +300,6 @@ body, .sb-root {
   gap: 28px;
 }
 
-/* Coordonnées */
 .sb-contact__details p {
   margin: 0 0 8px;
   display: flex;
@@ -310,34 +312,50 @@ body, .sb-root {
   color: var(--text);
   text-decoration: none;
 }
+
 .sb-contact__link:hover {
   color: var(--gold);
 }
 
-/* Avis Google */
-.sb-contact__reviews {
-  background: #111;
-  border: 1px solid #222;
+/* ================= NEWSLETTER BREVO ================= */
+.sb-contact__newsletter {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sb-newsletter-iframe {
+  width: 100%;
+  max-width: 540px;
+  border: none;
   border-radius: 12px;
-  padding: 20px;
-  height: 100%;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  overflow: hidden;
+  height: 400px; /* hauteur adaptée desktop */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
-.sb-contact__reviews h3 {
-  color: var(--gold);
-  margin-top: 0;
-  margin-bottom: 12px;
-  font-family: var(--font-title);
+/* ✅ Responsive : ajuste la taille automatiquement */
+@media (max-width: 900px) {
+  .sb-newsletter-iframe {
+    height: 520px; /* augmente un peu la hauteur pour mobile */
+    max-width: 100%;
+  }
 }
 
-.sb-review {
-  font-size: 14px;
-  color: var(--muted);
-  margin-bottom: 10px;
+@media (max-width: 480px) {
+  .sb-newsletter-iframe {
+    height: 600px;
+  }
 }
 
-/* Responsive : empilement vertical sur mobile */
+
+/* Ancien bloc avis (désactivé mais conservé) */
+.sb-contact__reviews {
+  display: none;
+}
+
+/* Responsive mobile */
 @media (max-width: 900px) {
   .sb-contact .sb-container {
     grid-template-columns: 1fr;
@@ -349,9 +367,10 @@ body, .sb-root {
   }
 
   .sb-contact__map iframe {
-    min-height: 420px;
+    min-height: 380px;
   }
 }
+
 
 /* ================= FOOTER ================= */
 .sb-footer { background:#000; padding:40px 20px; text-align:center; border-top:1px solid var(--line); }
@@ -600,20 +619,11 @@ export default function SenseiBurritoSite() {
               <div className="sib-form" style={{ textAlign: "center", backgroundColor: "transparent" }}>
                 <iframe
                   title="Sensei Letter"
-                  width="540"
-                  height="305"
                   src="https://f8bf683e.sibforms.com/serve/MUIFAPlmjYo9sI-uV4VY8ExdOAlrIJD9fRuMIfw31_oNc_BUSKSNn8SWlkyTtHT408z-p216BDHEXzihYJGZZaiL52wMmJ5uoJSLKZLFY04p_QogjAoQUgzA7toxQw3CcnYdS5dJF2RXLLtWg9b1igqcZY_eU-ga1OHJZKBxyRJOpCRRYftVGd5lRqiUXgXllzO8MHrvQyhiN7vK"
                   frameBorder="0"
-                  scrolling="auto"
+                  scrolling="no"
                   allowFullScreen
-                  style={{
-                    display: "block",
-                    marginLeft: "auto",
-                    marginRight: "auto",
-                    maxWidth: "100%",
-                    borderRadius: "12px",
-                    boxShadow: "0 8px 20px rgba(0,0,0,0.4)",
-                  }}
+                  className="sb-newsletter-iframe"
                 ></iframe>
               </div>
             </div>
