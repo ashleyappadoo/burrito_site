@@ -493,7 +493,7 @@ export default function SenseiBurritoSite() {
           <nav className="sb-cta">
             <a className="sb-btn sb-btn--gold" href="#collect">A Emporter</a>
             <a className="sb-btn sb-btn--dark" href="#delivery">Livraison</a>
-            <a className="sb-btn sb-btn--gold" href="#reservation">Sur Place</a>
+            <a className="sb-btn sb-btn--gold" href="#reservation">Y Aller</a>
           </nav>
         </div>
       </header>
