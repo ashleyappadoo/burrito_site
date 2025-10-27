@@ -342,6 +342,54 @@ body, .sb-root {
 }
 
 
+/* ================= SECTION MENU ================= */
+.sb-menu {
+  background: #000;
+  padding: 60px 20px 40px;
+  text-align: center;
+}
+
+.sb-menu__image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.sb-menu__image {
+  max-width: 1000px; /* taille max sur grand écran */
+  width: 90%; /* adaptation fluide */
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(212, 175, 55, 0.4); /* léger contour doré */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sb-menu__image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.25);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .sb-menu__image {
+    width: 95%;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sb-menu {
+    padding: 40px 10px 30px;
+  }
+
+  .sb-menu__image {
+    width: 100%;
+    border-radius: 8px;
+  }
+}
+
+
 /* ================= SECTION CONTACT ================= */
 #contact.sb-section {
   padding-top: 40px;
@@ -688,6 +736,19 @@ export default function SenseiBurritoSite() {
               Notre marque s'inspire de l'<strong>Enzo (円相)</strong>, le cercle japonais tracé d'un seul geste, symbole d'unité et d'harmonie. Il est au cœur de notre identité : chaque burrito est unique, artisanal, jamais identique, mais toujours façonné avec respect et équilibre.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* LE MENU */}
+      <section id="menu" className="sb-section sb-menu">
+        <h2 className="sb-h2">Le Menu</h2>
+        <div className="sb-menu__image-wrapper">
+          <img
+            src="/menu-sensei.jpg"
+            alt="Menu Sensei Burrito"
+            className="sb-menu__image"
+            loading="lazy"
+          />
         </div>
       </section>
 
