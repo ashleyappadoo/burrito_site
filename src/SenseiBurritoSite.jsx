@@ -513,7 +513,7 @@ export default function SenseiBurritoSite() {
           <source src="/enso_rotation.mp4" type="video/mp4" />
         </video>
         <div className="sb-hero__overlay sb-hero__overlay--gradient" />
-        <div className="sb-hero__overlay sb-hero__overlay--grid" />
+        {/*<div className="sb-hero__overlay sb-hero__overlay--grid" />  --------- grid sur video */}
         <div className="sb-hero__content">
           <h1 className="sb-hero__title">
             L'art du <span className="gold">burrito</span>, la voie du <span className="gold">Sensei</span>
