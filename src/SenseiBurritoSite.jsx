@@ -219,40 +219,51 @@ body, .sb-root {
 
 /* ================= HERO SOCIALS ================= */
 .sb-hero__socials {
-  margin-top: 24px;
+  margin-top: 32px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 28px;
+  position: relative;
   z-index: 2;
 }
 
+/* Icônes sociales : taille fixe, images originales, effet hover */
 .sb-hero__socials img {
-  width: 40px;
-  height: 40px;
+  width: 52px;
+  height: 52px;
   object-fit: contain;
-  filter: brightness(0) invert(1); /* rend les icônes blanches élégantes sur fond sombre */
   transition: transform 0.3s ease, filter 0.3s ease;
   cursor: pointer;
 }
 
+/* Effet hover : léger zoom + halo doré */
 .sb-hero__socials img:hover {
   transform: scale(1.15);
-  filter: brightness(0.9) invert(68%) sepia(52%) saturate(542%) hue-rotate(15deg) brightness(98%) contrast(96%);
+  filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.7));
 }
 
-/* Adaptation mobile */
-@media (max-width: 768px) {
+/* Ajustements responsives */
+@media (max-width: 900px) {
+  .sb-hero__socials {
+    margin-top: 24px;
+    gap: 20px;
+  }
   .sb-hero__socials img {
-    width: 34px;
-    height: 34px;
+    width: 42px;
+    height: 42px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sb-hero__socials img {
+    width: 36px;
+    height: 36px;
   }
   .sb-hero__socials {
-    gap: 18px;
-    margin-top: 20px;
+    gap: 16px;
   }
 }
-
 
 
 /* ================= SECTIONS ================= */
