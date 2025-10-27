@@ -496,7 +496,7 @@ export default function SenseiBurritoSite() {
             {/* Y Aller */}
             <a
               className="sb-btn sb-btn--gold"
-              href="https://www.google.com/maps/dir/44.829052,-0.538203/Sensei+Burrito,+48+Rue+Tiquetonne,+75002+Paris/@46.8162918,-1.7434237,7z/data=!3m1!4b1!4m10!4m9!1m1!4e1!1m5!1m1!1s0x47e66fcf0feb78ed:0xf51de355cfc4088d!2m2!1d2.3470693!2d48.8648139!3e3?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D" 
+              href="https://www.google.com/maps/dir//Sensei+Burrito,+48+Rue+Tiquetonne,+75002+Paris/@46.8162918,-1.7434237,7z/data=!4m9!4m8!1m0!1m5!1m1!1s0x47e66fcf0feb78ed:0xf51de355cfc4088d!2m2!1d2.3470693!2d48.8648139!3e3?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D" 
               target="_blank"
               rel="noopener noreferrer"
             >
