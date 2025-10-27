@@ -217,6 +217,43 @@ body, .sb-root {
   color: var(--muted);
 }
 
+/* ================= HERO SOCIALS ================= */
+.sb-hero__socials {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  z-index: 2;
+}
+
+.sb-hero__socials img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* rend les icônes blanches élégantes sur fond sombre */
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+.sb-hero__socials img:hover {
+  transform: scale(1.15);
+  filter: brightness(0.9) invert(68%) sepia(52%) saturate(542%) hue-rotate(15deg) brightness(98%) contrast(96%);
+}
+
+/* Adaptation mobile */
+@media (max-width: 768px) {
+  .sb-hero__socials img {
+    width: 34px;
+    height: 34px;
+  }
+  .sb-hero__socials {
+    gap: 18px;
+    margin-top: 20px;
+  }
+}
+
+
 
 /* ================= SECTIONS ================= */
 .sb-section {
@@ -526,11 +563,38 @@ export default function SenseiBurritoSite() {
             <a className="sb-btn sb-btn--dark" href="#delivery">Livraison</a>
           </div>
           <ul className="sb-hero__badges">
-            <li>🌮 Tacos guten free</li>
+            <li>🌮 Tacos gluten free</li>
             <li>🌯 Burrito maison</li>
             <li>🥋 Esprit dojo</li>
             <li>🥗 Options végé</li>
           </ul>
+          {/* Réseaux sociaux */}
+          <div className="sb-hero__socials">
+            <a
+              href="https://www.instagram.com/senseiburrito?igsh=MTZ3ZWlnMHQ1eTFvNA%3D%3D&utm_source=qr"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <img src="/instagram.png" alt="Instagram" />
+            </a>
+            <a
+              href="https://www.facebook.com/share/1YpYromwyt/?mibextid=wwXIfr"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <img src="/facebook.png" alt="Facebook" />
+            </a>
+            <a
+              href="https://www.google.com/search?sa=X&sca_esv=5f8ad457132af750&tbm=lcl&sxsrf=AE3TifNEnPkPbt5_XdU9Gg_FtXAP6SCzZQ:1761578034177&q=Sensei+Burrito+Reviews&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxIxNDczMzI1MjYyNzQ2NDExsDQzNN7AyPiKUSw4Na84NVPBqbSoKLMkXyEotSwztbx4ESsOCQAYif5nTQAAAA&rldimm=17662523271314409613&hl=en-FR&ved=2ahUKEwj1q-LH1cSQAxWBQEEAHZ2tBkcQ9fQKegQITRAF&biw=1920&bih=945&dpr=1#lkt=LocalPoiReviews"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Avis Google"
+            >
+              <img src="/avis_google.png" alt="Avis Google" />
+            </a>
+          </div>
         </div>
       </section>
 
