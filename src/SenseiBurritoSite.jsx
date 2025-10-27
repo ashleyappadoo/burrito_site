@@ -217,70 +217,69 @@ body, .sb-root {
   color: var(--muted);
 }
 
-/* ================= HERO SOCIALS (uniformisation des tailles) ================= */
+/* ================= HERO SOCIALS (tailles parfaitement homogènes) ================= */
 .sb-hero__socials {
   margin-top: 32px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 28px;
+  gap: 32px;
   position: relative;
   z-index: 2;
 }
 
-/* Icônes : carré, centrées, tailles visuelles homogènes */
-.sb-hero__socials img {
-  width: 58px;
-  height: 58px;
-  aspect-ratio: 1 / 1;
-  object-fit: contain;
-  object-position: center;
+/* Cadre carré commun à toutes les icônes */
+.sb-hero__socials a {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
   background: transparent;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Icône interne */
+.sb-hero__socials img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
   display: block;
   transition: transform 0.3s ease, filter 0.3s ease;
-  cursor: pointer;
 }
 
-/* Ajustement spécifique pour Google (compense son padding interne) */
+/* Ajustement fin par plateforme (harmonisation visuelle) */
+.sb-hero__socials a[href*="instagram"] img {
+  transform: scale(1.05);
+}
+.sb-hero__socials a[href*="facebook"] img {
+  transform: scale(1.3); /* Facebook était visuellement plus petit */
+}
 .sb-hero__socials a[href*="google"] img {
-  transform: scale(0.88); /* léger rétrécissement pour l’équilibrer */
+  transform: scale(0.92);
 }
 
-/* Hover : zoom doux + halo doré */
-.sb-hero__socials img:hover {
-  transform: scale(1.15);
-  filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.7));
+/* Effet hover doré */
+.sb-hero__socials a:hover img {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.7));
 }
 
 /* Responsive */
 @media (max-width: 900px) {
-  .sb-hero__socials {
-    margin-top: 24px;
-    gap: 20px;
-  }
-
-  .sb-hero__socials img {
-    width: 48px;
-    height: 48px;
-  }
-
-  .sb-hero__socials a[href*="google"] img {
-    transform: scale(0.9);
+  .sb-hero__socials a {
+    width: 56px;
+    height: 56px;
   }
 }
-
 @media (max-width: 600px) {
-  .sb-hero__socials img {
-    width: 40px;
-    height: 40px;
+  .sb-hero__socials a {
+    width: 46px;
+    height: 46px;
   }
-
-  .sb-hero__socials a[href*="google"] img {
-    transform: scale(0.92);
-  }
-
   .sb-hero__socials {
-    gap: 16px;
+    gap: 20px;
   }
 }
 
