@@ -491,7 +491,7 @@ export default function SenseiBurritoSite() {
             <img src="/logo_png.png" alt="Sensei Burrito" className="sb-logo" />
           </a>
           <nav className="sb-cta">
-            <a className="sb-btn sb-btn--gold" href="#collect">A Emporter</a>
+            <a className="sb-btn sb-btn--gold" href="#collect">Click & Collect</a>
             <a className="sb-btn sb-btn--dark" href="#delivery">Livraison</a>
             <a className="sb-btn sb-btn--gold" href="#reservation">Y Aller</a>
           </nav>
