@@ -612,7 +612,7 @@ export default function SenseiBurritoSite() {
       {/* LIGHTBOX MENU */}
       {menuOpen && (
         <div className="sb-lightbox" onClick={() => setMenuOpen(false)}>
-          <img src="/menu-sensei_horizon.jpg" alt="Menu Sensei Burrito" />
+          <img src="/menu-sensei.jpg" alt="Menu Sensei Burrito" />
           <button className="sb-lightbox__close" onClick={() => setMenuOpen(false)}>✕</button>
         </div>
       )}
