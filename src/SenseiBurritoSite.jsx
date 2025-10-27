@@ -217,7 +217,7 @@ body, .sb-root {
   color: var(--muted);
 }
 
-/* ================= HERO SOCIALS ================= */
+/* ================= HERO SOCIALS (uniformisation des tailles) ================= */
 .sb-hero__socials {
   margin-top: 32px;
   display: flex;
@@ -228,42 +228,62 @@ body, .sb-root {
   z-index: 2;
 }
 
-/* Icônes sociales : taille fixe, images originales, effet hover */
+/* Icônes : carré, centrées, tailles visuelles homogènes */
 .sb-hero__socials img {
-  width: 52px;
-  height: 52px;
+  width: 58px;
+  height: 58px;
+  aspect-ratio: 1 / 1;
   object-fit: contain;
+  object-position: center;
+  background: transparent;
+  display: block;
   transition: transform 0.3s ease, filter 0.3s ease;
   cursor: pointer;
 }
 
-/* Effet hover : léger zoom + halo doré */
+/* Ajustement spécifique pour Google (compense son padding interne) */
+.sb-hero__socials a[href*="google"] img {
+  transform: scale(0.88); /* léger rétrécissement pour l’équilibrer */
+}
+
+/* Hover : zoom doux + halo doré */
 .sb-hero__socials img:hover {
   transform: scale(1.15);
   filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.7));
 }
 
-/* Ajustements responsives */
+/* Responsive */
 @media (max-width: 900px) {
   .sb-hero__socials {
     margin-top: 24px;
     gap: 20px;
   }
+
   .sb-hero__socials img {
-    width: 42px;
-    height: 42px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .sb-hero__socials a[href*="google"] img {
+    transform: scale(0.9);
   }
 }
 
 @media (max-width: 600px) {
   .sb-hero__socials img {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
   }
+
+  .sb-hero__socials a[href*="google"] img {
+    transform: scale(0.92);
+  }
+
   .sb-hero__socials {
     gap: 16px;
   }
 }
+
 
 
 /* ================= SECTIONS ================= */
