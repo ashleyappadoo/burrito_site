@@ -518,7 +518,8 @@ export default function SenseiBurritoSite() {
             <a className="sb-btn sb-btn--dark" href="#delivery">Livraison</a>
           </div>
           <ul className="sb-hero__badges">
-            <li>🌮 Tortillas maison</li>
+            <li>🌮 Tacos guten free</li>
+            <li>🌯 Burrito maison</li>
             <li>🥋 Esprit dojo</li>
             <li>🥗 Options végé</li>
           </ul>
