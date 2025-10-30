@@ -513,6 +513,73 @@ body, .sb-root {
   }
 } 
 
+/* ================= POPUP PDF ================= */
+.sb-pdf-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+  padding: 20px;
+  backdrop-filter: blur(6px);
+}
+
+.sb-pdf-popup__content {
+  position: relative;
+  background: #111;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(212,175,55,0.2);
+  max-width: 90vw;
+  max-height: 90vh;
+  width: 800px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.sb-pdf-popup__iframe {
+  width: 100%;
+  height: 90vh;
+  border: none;
+  border-radius: 12px;
+}
+
+.sb-pdf-popup__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--gold);
+  color: #000;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.sb-pdf-popup__close:hover {
+  transform: scale(1.1);
+  background: #c19b2e;
+}
+
+/* ✅ Responsive : plein écran sur mobile */
+@media (max-width: 768px) {
+  .sb-pdf-popup__content {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+  .sb-pdf-popup__iframe {
+    height: 100vh;
+  }
+}
+
+
 /* --- Ajustement hero en mobiel --- */
 @media (max-width: 768px) {
   /* Décale le hero vers le bas pour ne pas être masqué par le header fixe */
@@ -556,6 +623,8 @@ body, .sb-root {
 export default function SenseiBurritoSite() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [popup, setPopup] = useState(null);
+
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -822,12 +891,28 @@ export default function SenseiBurritoSite() {
           </div>
           <p>© {new Date().getFullYear()} Sensei Burrito — Tous droits réservés.</p>
           <nav className="sb-footer__social">
-            <a href="#" aria-label="Politique de Confidentialité">Politique de Confidentialité</a>
-            {/*<a href="#" aria-label="TikTok">TikTok</a>*/}
-            <a href="#" aria-label="Mentions Légales">Mention Légales</a>
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                setPopup("/Politique_Confidentialite_SenseiBurrito.pdf");
+              }}
+            >
+              Politique de Confidentialité
+            </a>
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                setPopup("/Mentions_Legales_SenseiBurrito.pdf");
+              }}
+            >
+              Mentions Légales
+            </a>
           </nav>
         </div>
       </footer>
+
 
       {/* CTA BAS DE PAGE MOBILE */}
       <div className="sb-bottom-cta">
@@ -835,6 +920,21 @@ export default function SenseiBurritoSite() {
         <a className="sb-btn sb-btn--dark" href="#delivery">Livraison</a>
         <a className="sb-btn sb-btn--gold" href="#reservation">Sur Place</a>
       </div>
+
+      {/* === POPUP PDF === */}
+      {popup && (
+        <div className="sb-pdf-popup" onClick={() => setPopup(null)}>
+          <div className="sb-pdf-popup__content" onClick={(e) => e.stopPropagation()}>
+            <button className="sb-pdf-popup__close" onClick={() => setPopup(null)}>✕</button>
+            <iframe
+              src={popup}
+              title="Document PDF"
+              className="sb-pdf-popup__iframe"
+            ></iframe>
+          </div>
+        </div>
+      )}
+
     </div>
   );
 }
