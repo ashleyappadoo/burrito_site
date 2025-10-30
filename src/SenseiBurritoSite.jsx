@@ -822,9 +822,9 @@ export default function SenseiBurritoSite() {
           </div>
           <p>© {new Date().getFullYear()} Sensei Burrito — Tous droits réservés.</p>
           <nav className="sb-footer__social">
-            <a href="#" aria-label="Instagram">Instagram</a>
-            <a href="#" aria-label="TikTok">TikTok</a>
-            <a href="#" aria-label="Facebook">Facebook</a>
+            <a href="#" aria-label="Politique de Confidentialité">Politique de Confidentialité</a>
+            {/*<a href="#" aria-label="TikTok">TikTok</a>*/}
+            <a href="#" aria-label="Mentions Légales">Mention Légales</a>
           </nav>
         </div>
       </footer>
