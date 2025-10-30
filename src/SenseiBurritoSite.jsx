@@ -501,6 +501,31 @@ body, .sb-root {
 .sb-footer__social a { margin:0 8px; color:var(--muted); text-decoration:none; }
 .sb-footer__social a:hover { color:var(--gold); }
 
+/* ✅ Ajustement du footer pour mobile */
+@media (max-width: 768px) {
+  .sb-footer__social {
+    display: flex;
+    flex-direction: column; /* empile les liens */
+    gap: 8px; /* espace vertical */
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .sb-footer__social a {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1.4;
+    word-break: break-word; /* évite que le texte dépasse */
+  }
+
+  .sb-footer__inner p {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+}
+
+
 /* Masquer le bloc CTA bas de page par défaut (desktop) */
 .sb-bottom-cta {
   display: none;
