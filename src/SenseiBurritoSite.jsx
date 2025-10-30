@@ -538,6 +538,14 @@ body, .sb-root {
   }
 } 
 
+/* ✅ Empêche le CTA mobile de masquer le footer */
+@media (max-width: 768px) {
+  .sb-footer {
+    padding-bottom: 100px; /* crée un espace sous le footer */
+  }
+}
+
+
 /* ================= POPUP PDF ================= */
 .sb-pdf-popup {
   position: fixed;
