@@ -17,13 +17,13 @@ module.exports = async (req, res) => {
       port: 465,
       secure: true,
       auth: {
-        user: "contact@senseiburrito.fr",
+        user: "contact@senseiburrito.com",
         pass: process.env.MAIL_PASSWORD, // ← à définir dans tes variables Vercel
       },
     });
 
     await transporter.sendMail({
-      from: `"Site Sensei Burrito" <contact@senseiburrito.fr>`,
+      from: `"Site Sensei Burrito" <contact@senseiburrito.com>`,
       to: "contact@senseiburrito.fr",
       subject: "📩 Nouveau message via le site Sensei Burrito",
       html: `
