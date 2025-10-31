@@ -217,6 +217,43 @@ body, .sb-root {
   color: var(--muted);
 }
 
+/* === Ajustement du HERO pour mobile === */
+@media (max-width: 768px) {
+  .sb-hero {
+    min-height: 100vh; /* prend toute la hauteur de l'écran */
+    padding-top: 100px; /* espace sous le header fixe */
+    justify-content: flex-start; /* décale vers le haut */
+  }
+
+  .sb-hero__content {
+    margin-top: 40px; /* légère descente du texte */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .sb-hero__badges {
+    margin-top: 16px;
+  }
+
+  .sb-hero__socials {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    transform: scale(0.9); /* icônes légèrement plus petites */
+  }
+
+  .sb-hero__socials img {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+
 /* ================= HERO SOCIALS (tailles parfaitement homogènes) ================= */
 .sb-hero__socials {
   margin-top: 32px;
