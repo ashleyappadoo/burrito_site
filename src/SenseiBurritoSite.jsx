@@ -152,6 +152,8 @@ body, .sb-root {
   justify-content: center;
   text-align: center;
   overflow: hidden;
+  padding-top: 100px; /* Décale le hero vers le bas pour ne pas être masqué par le header */
+
 }
 
 .sb-hero__video {
