@@ -580,6 +580,7 @@ body, .sb-root {
   height: 90vh;
   border: none;
   border-radius: 12px;
+  background: #000; /* évite les flash blancs au chargement */
 }
 
 .sb-pdf-popup__close {
@@ -963,7 +964,7 @@ export default function SenseiBurritoSite() {
           <div className="sb-pdf-popup__content" onClick={(e) => e.stopPropagation()}>
             <button className="sb-pdf-popup__close" onClick={() => setPopup(null)}>✕</button>
             <iframe
-              src={popup}
+              src={`${popup}#toolbar=0&navpanes=0&scrollbar=0`}
               title="Document PDF"
               className="sb-pdf-popup__iframe"
             ></iframe>
