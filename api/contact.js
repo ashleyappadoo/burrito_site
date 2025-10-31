@@ -1,14 +1,14 @@
-import nodemailer from "nodemailer";
+const nodemailer = require("nodemailer");
 
-export default async function handler(req, res) {
+module.exports = async (req, res) => {
   if (req.method !== "POST") {
-    return res.status(405).send({ message: "Méthode non autorisée" });
+    return res.status(405).json({ message: "Méthode non autorisée" });
   }
 
   const { name, email, phone, message } = req.body;
 
   if (!name || !email || !phone || !message) {
-    return res.status(400).send({ message: "Tous les champs sont obligatoires." });
+    return res.status(400).json({ message: "Tous les champs sont obligatoires." });
   }
 
   try {
@@ -17,17 +17,17 @@ export default async function handler(req, res) {
       port: 465,
       secure: true,
       auth: {
-        user: "contact@senseiburrito.com",
-        pass: "Senseiburrito",
+        user: "contact@senseiburrito.fr",
+        pass: process.env.MAIL_PASSWORD, // ← à définir dans tes variables Vercel
       },
     });
 
     await transporter.sendMail({
-      from: `"Site Sensei Burrito" <contact@senseiburrito.com>`,
+      from: `"Site Sensei Burrito" <contact@senseiburrito.fr>`,
       to: "contact@senseiburrito.fr",
       subject: "📩 Nouveau message via le site Sensei Burrito",
       html: `
-        <h2>Nouveau message reçu</h2>
+        <h3>Nouveau message reçu depuis le site :</h3>
         <p><strong>Nom :</strong> ${name}</p>
         <p><strong>Email :</strong> ${email}</p>
         <p><strong>Téléphone :</strong> ${phone}</p>
@@ -35,9 +35,9 @@ export default async function handler(req, res) {
       `,
     });
 
-    res.status(200).send({ message: "Message envoyé avec succès" });
-  } catch (err) {
-    console.error("Erreur envoi email:", err);
-    res.status(500).send({ message: "Erreur serveur : impossible d'envoyer le message." });
+    return res.status(200).json({ message: "Votre message a bien été envoyé !" });
+  } catch (error) {
+    console.error("Erreur Nodemailer :", error);
+    return res.status(500).json({ message: "Erreur serveur : impossible d'envoyer l'email." });
   }
-}
+};
