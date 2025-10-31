@@ -496,6 +496,67 @@ body, .sb-root {
   }
 }
 
+/* ================= FORMULAIRE DE CONTACT ================= */
+.sb-contact__form {
+  background: #000;
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group label {
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #111;
+  color: #fff;
+  font-size: 15px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+}
+
+.sb-contact__form button {
+  width: 100%;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .sb-contact__form {
+    max-width: 100%;
+    padding: 24px;
+  }
+}
+
+
 
 /* ================= FOOTER ================= */
 .sb-footer { background:#000; padding:40px 20px; text-align:center; border-top:1px solid var(--line); }
@@ -862,7 +923,7 @@ export default function SenseiBurritoSite() {
       <section id="contact" className="sb-section sb-contact">
         <h2 className="sb-h2">Nous Contacter</h2>
         <div className="sb-container sb-split">
-          
+      
           {/* Google Maps */}
           <div className="sb-contact__map">
             <iframe
@@ -876,44 +937,31 @@ export default function SenseiBurritoSite() {
             ></iframe>
           </div>
       
-          {/* Coordonnées & Newsletter */}
-          <div className="sb-contact__info">
-            {/* Coordonnées */}
-            <div className="sb-contact__details">
-              <p>
-                  <span className="gold">Contactez-nous par email</span>
-              </p>
-              <p>
-                <span className="gold">✉️</span>{" "}
-                <a href="mailto:contact@senseiburrito.fr" className="sb-contact__link">
-                  contact@senseiburrito.fr
-                </a>
-              </p>
-            </div>
-      
-            {/* === NEWSLETTER BREVO === */}
-            <div className="sb-contact__newsletter">
-              <div className="sib-form" style={{ textAlign: "center", backgroundColor: "transparent" }}>
-                <iframe
-                  title="Sensei Letter"
-                  src="https://f8bf683e.sibforms.com/serve/MUIFAPlmjYo9sI-uV4VY8ExdOAlrIJD9fRuMIfw31_oNc_BUSKSNn8SWlkyTtHT408z-p216BDHEXzihYJGZZaiL52wMmJ5uoJSLKZLFY04p_QogjAoQUgzA7toxQw3CcnYdS5dJF2RXLLtWg9b1igqcZY_eU-ga1OHJZKBxyRJOpCRRYftVGd5lRqiUXgXllzO8MHrvQyhiN7vK"
-                  frameBorder="0"
-                  scrolling="no"
-                  allowFullScreen
-                  className="sb-newsletter-iframe"
-                ></iframe>
+          {/* FORMULAIRE DE CONTACT */}
+          <div className="sb-contact__form">
+            <form id="contactForm" className="contact-form" method="POST" action="/api/contact">
+              <div className="form-group">
+                <label htmlFor="name">Nom *</label>
+                <input type="text" id="name" name="name" required />
               </div>
-            </div>
       
-            {/* === Ancienne section Avis Google (désactivée) === */}
-            {/*
-            <div className="sb-contact__reviews">
-              <h3>Avis Google</h3>
-              <div className="sb-review">⭐⭐⭐⭐⭐ "Excellent burrito, ambiance zen et service rapide !"</div>
-              <div className="sb-review">⭐⭐⭐⭐⭐ "Un concept original et des saveurs maîtrisées, je recommande !"</div>
-              <div className="sb-review">⭐⭐⭐⭐ "Lieu très sympa, belle présentation et plats copieux."</div>
-            </div>
-            */}
+              <div className="form-group">
+                <label htmlFor="email">Email *</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+      
+              <div className="form-group">
+                <label htmlFor="phone">Téléphone *</label>
+                <input type="tel" id="phone" name="phone" required />
+              </div>
+      
+              <div className="form-group">
+                <label htmlFor="message">Message *</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+              </div>
+      
+              <button type="submit" className="sb-btn sb-btn--gold">Envoyer</button>
+            </form>
           </div>
         </div>
       </section>
