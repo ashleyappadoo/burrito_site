@@ -496,27 +496,26 @@ body, .sb-root {
   }
 }
 
-/* ================= FORMULAIRE DE CONTACT ================= */
+/* === FORMULAIRE DE CONTACT === */
 .sb-contact__form {
-  background: #000;
-  border: 1px solid var(--gold);
+  background: #111;
+  padding: 24px;
   border-radius: 12px;
-  padding: 32px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  max-width: 540px;
   width: 100%;
-  max-width: 480px;
   margin: 0 auto;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
 }
 
 .form-group label {
-  color: var(--gold);
   font-weight: 600;
+  color: var(--gold);
   margin-bottom: 6px;
   display: block;
 }
@@ -524,35 +523,32 @@ body, .sb-root {
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 12px 14px;
+  padding: 10px 14px;
   border-radius: 8px;
-  border: 1px solid #333;
-  background: #111;
-  color: #fff;
-  font-size: 15px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--line);
+  background: #000;
+  color: var(--text);
+  font-family: inherit;
+  resize: none;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-  outline: none;
   border-color: var(--gold);
-  box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+  outline: none;
 }
 
-.sb-contact__form button {
-  width: 100%;
-  font-weight: 700;
-  font-size: 16px;
-  border-radius: 8px;
-  padding: 12px;
-  cursor: pointer;
+.form-status {
+  margin-top: 10px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
 }
 
+/* Responsive */
 @media (max-width: 900px) {
   .sb-contact__form {
     max-width: 100%;
-    padding: 24px;
   }
 }
 
@@ -939,30 +935,66 @@ export default function SenseiBurritoSite() {
       
           {/* FORMULAIRE DE CONTACT */}
           <div className="sb-contact__form">
-            <form id="contactForm" className="contact-form" method="POST" action="/api/contact">
+            <form
+              id="contactForm"
+              className="contact-form"
+              onSubmit={async (e) => {
+                e.preventDefault();
+                const form = e.target;
+                const data = Object.fromEntries(new FormData(form).entries());
+                const status = document.querySelector(".form-status");
+                status.textContent = "⏳ Envoi en cours...";
+          
+                try {
+                  const res = await fetch("/api/contact", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data),
+                  });
+                  const result = await res.json();
+          
+                  if (res.ok) {
+                    status.textContent = "✅ Message envoyé avec succès !";
+                    status.style.color = "var(--gold)";
+                    form.reset();
+                  } else {
+                    status.textContent =
+                      "❌ " + (result.message || "Une erreur est survenue. Veuillez réessayer.");
+                    status.style.color = "#ff5555";
+                  }
+                } catch (err) {
+                  status.textContent = "❌ Erreur de connexion. Réessayez plus tard.";
+                  status.style.color = "#ff5555";
+                }
+              }}
+            >
               <div className="form-group">
                 <label htmlFor="name">Nom *</label>
                 <input type="text" id="name" name="name" required />
               </div>
-      
+          
               <div className="form-group">
                 <label htmlFor="email">Email *</label>
                 <input type="email" id="email" name="email" required />
               </div>
-      
+          
               <div className="form-group">
                 <label htmlFor="phone">Téléphone *</label>
                 <input type="tel" id="phone" name="phone" required />
               </div>
-      
+          
               <div className="form-group">
                 <label htmlFor="message">Message *</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
               </div>
-      
+          
               <button type="submit" className="sb-btn sb-btn--gold">Envoyer</button>
+          
+              {/* ✅ Message de retour */}
+              <p className="form-status"></p>
             </form>
           </div>
+
         </div>
       </section>
 
