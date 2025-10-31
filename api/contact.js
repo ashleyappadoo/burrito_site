@@ -17,13 +17,13 @@ export default async function handler(req, res) {
       port: 465,
       secure: true,
       auth: {
-        user: "contact@senseiburrito.fr",
-        pass: "⚠️TON_MOT_DE_PASSE_ICI⚠️",
+        user: "contact@senseiburrito.com",
+        pass: "Senseiburrito",
       },
     });
 
     await transporter.sendMail({
-      from: `"Site Sensei Burrito" <ona.action@gmail.com>`,
+      from: `"Site Sensei Burrito" <contact@senseiburrito.com>`,
       to: "contact@senseiburrito.fr",
       subject: "📩 Nouveau message via le site Sensei Burrito",
       html: `
