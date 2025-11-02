@@ -552,6 +552,130 @@ body, .sb-root {
   }
 }
 
+/* ================= FORMULAIRE DE CONTACT - FIX RESPONSIVE ================= */
+
+/* Conteneur principal */
+.sb-contact__form {
+  background: #111;
+  padding: 32px 24px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Le conteneur global (Google Maps + Formulaire) */
+.sb-contact .sb-container.sb-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Champs du formulaire */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+}
+
+.contact-form label {
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 4px;
+  display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: #000;
+  color: var(--text);
+  font-family: inherit;
+  resize: none;
+  box-sizing: border-box;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--gold);
+  outline: none;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 12px;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background: var(--gold);
+  color: #000;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #c19b2e;
+  color: #fff;
+}
+
+/* Message de succès / erreur */
+.form-status {
+  margin-top: 8px;
+  font-weight: 600;
+  text-align: center;
+  min-height: 20px;
+  transition: all 0.3s ease;
+}
+
+/* =================== RESPONSIVE =================== */
+
+/* Tablettes et petits écrans */
+@media (max-width: 1024px) {
+  .sb-contact .sb-container.sb-split {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 600px) {
+  .sb-contact__form {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .contact-form button {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 15px;
+  }
+
+  .sb-contact .sb-container.sb-split {
+    gap: 24px;
+  }
+
+  .sb-contact__map iframe {
+    min-height: 320px;
+  }
+}
+
 
 
 /* ================= FOOTER ================= */
