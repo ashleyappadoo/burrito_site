@@ -554,17 +554,19 @@ body, .sb-root {
 
 /* ================= FORMULAIRE DE CONTACT - FIX RESPONSIVE ================= */
 
-/* Conteneur principal */
+/* Conteneur principal - version dorée */
 .sb-contact__form {
-  background: #111;
-  padding: 32px 24px;
+  background: #0a0a0a; /* noir profond pour contraste */
+  border: 2px solid var(--gold); /* bordure dorée */
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  padding: 32px 24px;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.25); /* halo doré subtil */
   width: 100%;
   max-width: 520px;
   margin: 0 auto;
   box-sizing: border-box;
 }
+
 
 /* Le conteneur global (Google Maps + Formulaire) */
 .sb-contact .sb-container.sb-split {
@@ -629,6 +631,8 @@ body, .sb-root {
 .contact-form button:hover {
   background: #c19b2e;
   color: #fff;
+  transform: scale(1.02);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
 }
 
 /* Message de succès / erreur */
@@ -656,6 +660,16 @@ body, .sb-root {
     padding: 20px;
     max-width: 90%;
   }
+
+/* Encadré doré - ajustement responsive */
+@media (max-width: 768px) {
+  .sb-contact__form {
+    max-width: 95%;
+    padding: 20px;
+    border-width: 1.5px; /* bordure plus fine sur mobile */
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.2);
+  }
+}
 
   .contact-form button {
     font-size: 15px;
