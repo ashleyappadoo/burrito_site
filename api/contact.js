@@ -13,14 +13,18 @@ module.exports = async (req, res) => {
 
   try {
     const transporter = nodemailer.createTransport({
-      host: "ssl0.ovh.net",
+      host: "smtp.mail.ovh.net",
       port: 465,
-      secure: true,
+      secure: true, // SSL/TLS
       auth: {
         user: "contact@senseiburrito.com",
-        pass: process.env.MAIL_PASSWORD, // ← à définir dans tes variables Vercel
+        pass: process.env.MAIL_PASSWORD, // définie dans Vercel → Settings > Environment Variables
+      },
+      tls: {
+        rejectUnauthorized: false, // important sur Vercel pour éviter les certificats auto-signés
       },
     });
+
 
     await transporter.sendMail({
       from: `"Site Sensei Burrito" <contact@senseiburrito.com>`,
