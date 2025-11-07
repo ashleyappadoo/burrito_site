@@ -25,6 +25,8 @@ module.exports = async (req, res) => {
       },
     });
 
+    await transporter.verify();
+    console.log("✅ SMTP connecté avec succès !");
 
     await transporter.sendMail({
       from: `"Site Sensei Burrito" <contact@senseiburrito.com>`,
