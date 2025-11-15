@@ -434,6 +434,36 @@ body, .sb-root {
 .sb-contact__link:hover {
   color: var(--gold);
 }
+/* Texte d’introduction dans la section Contact */
+.sb-contact__intro {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text);
+  font-weight: 400;
+}
+
+.sb-contact__intro strong {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.sb-contact__intro em {
+  color: #cfcfcf;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .sb-contact__intro {
+    font-size: 16px;
+    margin-bottom: 32px;
+    padding: 0 16px;
+  }
+}
+
 
 /* ================= NEWSLETTER BREVO ================= */
 .sb-contact__newsletter {
@@ -932,10 +962,13 @@ export default function SenseiBurritoSite() {
         {/*<div className="sb-hero__overlay sb-hero__overlay--grid" />  --------- grid sur video */}
         <div className="sb-hero__content">
           <h1 className="sb-hero__title">
-            L'art du <span className="gold">burrito</span>, la voie du <span className="gold">Sensei</span>
+            {/*L'art du <span className="gold">burrito</span>, la voie du <span className="gold">Sensei</span>*/}
+            <span className="gold">Burritos</span> artisanaux, famille de <span className="gold">Sensei</span>
           </h1>
           <p className="sb-hero__tagline">
-            Une cuisine de caractère, des gestes précis, des saveurs franches. Bienvenue chez Sensei Burrito – l'alliance chic du burrito et de l'esprit dojo.
+            {/*Une cuisine de caractère, des gestes précis, des saveurs franches. Bienvenue chez Sensei Burrito – l'alliance chic du burrito et de l'esprit dojo.*/}
+            Famille de sensei habitant à Paris Châtelet, nous préparons des burritos faits maison à l’angle de la rue Montorgueil et de la rue Tiquetonne.
+            Viandes effilochées en cuisson lente (pulled beef, pulled chicken), entre 3 et 20 h, servies dans un petit comptoir noir & or
           </p>
           <div className="sb-hero__actions">
             <button className="sb-btn sb-btn--gold" onClick={() => setMenuOpen(true)}>Menu</button>
@@ -943,9 +976,9 @@ export default function SenseiBurritoSite() {
           </div>
           <ul className="sb-hero__badges">
             <li>🌮 Tacos gluten free</li>
-            <li>🌯 Burrito maison</li>
-            <li>🥋 Esprit dojo</li>
-            <li>🥗 Options végé</li>
+            <li>🌯 Burrito artisanal</li>
+            <li>🥋 Famille de sensei</li>
+            <li>🥗 Halal & veggie</li>
           </ul>
           {/* Réseaux sociaux */}
           <div className="sb-hero__socials">
@@ -994,22 +1027,22 @@ export default function SenseiBurritoSite() {
             <article className="sb-card-img">
               <img src="/concept1.jpg" alt="Cuisine de précision" />
               <div className="sb-card-img__body">
-                <h3>Cuisine de Précision</h3>
-                <p>Préparations minute, gestes maîtrisés, sourcing exigeant. Une exigence inspirée du dojo.</p>
+                <h3>Burrito Signature</h3>
+                <p>Notre signature : un burrito artisanal ceinturé comme une ceinture de karaté. Pulled beef, pulled chicken ou veggie, toujours accompagnés de la sauce secrète du Sensei.</p>
               </div>
             </article>
             <article className="sb-card-img">
               <img src="/concept2.jpg" alt="Burritos Signature" />
               <div className="sb-card-img__body">
-                <h3>Burritos Signature</h3>
-                <p>Des recettes originales, un équilibre net entre textures et épices. Options veggie, poulet karaage, bœuf mariné.</p>
+                <h3>Burrito Artisanal</h3>
+                <p>Recettes courtes, gestes précis, mêmes bases chaque jour. Viandes effilochées en cuisson lente (3 à 20 h), pour des burritos réguliers et fondants.</p>
               </div>
             </article>
             <article className="sb-card-img">
               <img src="/concept3.jpg" alt="Ambiance Dojo" />
               <div className="sb-card-img__body">
                 <h3>Ambiance Dojo</h3>
-                <p>Bois sombre, lueur chaude, accents dorés. Une salle raffinée pour un moment concentré.</p>
+                <p>Comptoir noir & or au coin de Montorgueil et Tiquetonne. Une ambiance familiale et élégante, inspirée du dojo.</p>
               </div>
             </article>
           </div>
@@ -1028,13 +1061,16 @@ export default function SenseiBurritoSite() {
           <div className="sb-split__text">
             <h2 className="sb-h2">Notre Histoire</h2>
             <p>
-              Niché dans le ventre de Paris, entre Les Halles de Châtelet et la rue animée de Montorgueuil, <strong>Sensei Burrito</strong> est plus qu'un simple restaurant : c'est un lieu de vie, un espace de convivialité et de partage.
+              Sensei Burrito, c’est une <strong>famille de sensei</strong>strong> habitant à Paris Châtelet, au coin de la rue Montorgueil et de la rue Tiquetonne.
+              {/*Niché dans le ventre de Paris, entre Les Halles de Châtelet et la rue animée de Montorgueuil, <strong>Sensei Burrito</strong> est plus qu'un simple restaurant : c'est un lieu de vie, un espace de convivialité et de partage.*/}
             </p>
             <p>
-              Installés dans la rue Tiquetonne, au cœur d'un quartier historique et commerçant, nous perpétuons une <span className="gold strong">tradition familiale ancrée ici depuis plus de 40 ans</span>. Un quartier où l'on connaît ses voisins, où les clients deviennent des habitués.
+              Entre le dojo et la cuisine, nous avons voulu un petit comptoir qui nous ressemble : <span className="gold strong">burritos artisanaux, viandes effilochées en cuisson lente (pulled beef, pulled chicken)</span>, noir & or, service direct dans notre quartier.
+              {/*Installés dans la rue Tiquetonne, au cœur d'un quartier historique et commerçant, nous perpétuons une <span className="gold strong">tradition familiale ancrée ici depuis plus de 40 ans</span>. Un quartier où l'on connaît ses voisins, où les clients deviennent des habitués.*/}
             </p>
             <p>
-              Notre marque s'inspire de l'<strong>Enzo (円相)</strong>, le cercle japonais tracé d'un seul geste, symbole d'unité et d'harmonie. Il est au cœur de notre identité : chaque burrito est unique, artisanal, jamais identique, mais toujours façonné avec respect et équilibre.
+              Le cercle Sensei vient de l’<strong>Ensō</strong> japonais : un geste répété jusqu’à ce qu’il soit juste. C’est la même idée pour nos recettes, nos cuissons lentes et notre sauce secrète du Sensei.
+              {/*Notre marque s'inspire de l'<strong>Enzo (円相)</strong>, le cercle japonais tracé d'un seul geste, symbole d'unité et d'harmonie. Il est au cœur de notre identité : chaque burrito est unique, artisanal, jamais identique, mais toujours façonné avec respect et équilibre.*/}
             </p>
           </div>
         </div>
@@ -1056,6 +1092,14 @@ export default function SenseiBurritoSite() {
       {/* NOUS CONTACTER */}
       <section id="contact" className="sb-section sb-contact">
         <h2 className="sb-h2">Nous Contacter</h2>
+        {/* Texte d’introduction */}
+        <p className="sb-contact__intro">
+          La boutique <strong>Sensei Burrito</strong> ouvrira prochainement à Paris Châtelet,
+          à l’angle de la rue <strong>Montorgueil</strong> et de la rue <strong>Tiquetonne</strong>.<br /><br />
+          Burritos artisanaux, viandes effilochées en cuisson lente (<em>pulled beef</em>, <em>pulled chicken</em>)
+          et tacos maïs sans gluten arrivent bientôt.<br />
+          Pour être informé de l’ouverture ou nous écrire, laissez-nous un message ici.
+        </p>
         <div className="sb-container sb-split">
       
           {/* Google Maps */}
