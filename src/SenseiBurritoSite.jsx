@@ -391,6 +391,50 @@ body, .sb-root {
     border-radius: 8px;
   }
 }
+/* ================= FOOD GALLERY ================= */
+.sb-food-gallery {
+  width: 100%;
+  overflow: hidden;
+  margin: 40px auto;
+  padding: 10px 0;
+  position: relative;
+}
+
+.sb-food-track {
+  display: flex;
+  gap: 28px;
+  animation: scrollFood 28s linear infinite;
+}
+
+.sb-food-track img {
+  width: 260px;        /* taille harmonisée */
+  height: 260px;       /* carré premium */
+  object-fit: cover;
+  border-radius: 14px;
+  border: 2px solid var(--gold);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+  background: #000;
+}
+
+/* Animation défilement */
+@keyframes scrollFood {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* MOBILE OPTIMISATION */
+@media (max-width: 768px) {
+  .sb-food-track img {
+    width: 160px;
+    height: 160px;
+    border-radius: 10px;
+  }
+  .sb-food-track {
+    gap: 18px;
+    animation-duration: 22s;
+  }
+}
+
 
 
 /* ================= SECTION CONTACT ================= */
@@ -1079,6 +1123,24 @@ export default function SenseiBurritoSite() {
       {/* LE MENU */}
       <section id="menu" className="sb-section sb-menu">
         <h2 className="sb-h2">Le Menu</h2>
+        {/* Gallerie Food défilante */}
+        <div className="sb-food-gallery">
+          <div className="sb-food-track">
+            <img src="/food1.jpg" alt="Food 1" />
+            <img src="/food2.jpg" alt="Food 2" />
+            <img src="/food3.jpg" alt="Food 3" />
+            <img src="/food4.jpg" alt="Food 4" />
+            <img src="/food5.jpg" alt="Food 5" />
+        
+            {/* duplication pour un défilement infini fluide */}
+            <img src="/food1.jpg" alt="Food 1 duplicate" />
+            <img src="/food2.jpg" alt="Food 2 duplicate" />
+            <img src="/food3.jpg" alt="Food 3 duplicate" />
+            <img src="/food4.jpg" alt="Food 4 duplicate" />
+            <img src="/food5.jpg" alt="Food 5 duplicate" />
+          </div>
+        </div>
+
         <div className="sb-menu__image-wrapper">
           <img
             src="/menu-sensei.jpg"
