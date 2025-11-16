@@ -1083,7 +1083,7 @@ export default function SenseiBurritoSite() {
           <p className="sb-hero__tagline">
             {/*Une cuisine de caractère, des gestes précis, des saveurs franches. Bienvenue chez Sensei Burrito – l'alliance chic du burrito et de l'esprit dojo.*/}
             Nous préparons nos burritos faits maison à l’angle de la rue Montorgueil et de la rue Tiquetonne.
-            Viandes effilochées en cuisson lente (pulled beef, pulled chicken), servies dans un comptoir noir & or
+            Viandes effilochées en cuisson lente, servies dans un comptoir noir & or
           </p>
           <div className="sb-hero__actions">
             <button className="sb-btn sb-btn--gold" onClick={() => setMenuOpen(true)}>Menu</button>
