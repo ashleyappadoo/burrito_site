@@ -1082,8 +1082,8 @@ export default function SenseiBurritoSite() {
           </h1>
           <p className="sb-hero__tagline">
             {/*Une cuisine de caractère, des gestes précis, des saveurs franches. Bienvenue chez Sensei Burrito – l'alliance chic du burrito et de l'esprit dojo.*/}
-            Famille de sensei habitant à Paris Châtelet, nous préparons des burritos faits maison à l’angle de la rue Montorgueil et de la rue Tiquetonne.
-            Viandes effilochées en cuisson lente (pulled beef, pulled chicken), entre 3 et 20 h, servies dans un petit comptoir noir & or
+            Nous préparons nos burritos faits maison à l’angle de la rue Montorgueil et de la rue Tiquetonne.
+            Viandes effilochées en cuisson lente (pulled beef, pulled chicken), servies dans un comptoir noir & or
           </p>
           <div className="sb-hero__actions">
             <button className="sb-btn sb-btn--gold" onClick={() => setMenuOpen(true)}>Menu</button>
