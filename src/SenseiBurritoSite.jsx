@@ -140,6 +140,77 @@ body, .sb-root {
     border-radius: 8px;
   }
 }
+/* ================= MOBILE HEADER + BOTTOM CTA ================= */
+@media (max-width: 768px) {
+
+  /* HEADER mobile uniquement */
+  .sb-header {
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .sb-header--scrolled {
+    padding: 6px 0;
+  }
+
+  .sb-header__inner {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .sb-logo {
+    height: 82px;
+    margin: 0 auto;
+    display: block;
+    transition: all .4s ease;
+  }
+
+  .sb-header--scrolled .sb-logo {
+    height: 42px; /* rétrécit légèrement au scroll */
+    transform: none; /* supprime le décalage */
+  }
+
+  /* Masquer les CTA du header */
+  .sb-header .sb-cta {
+    display: none;
+  }
+
+  /* CTA fixes en bas d’écran */
+  .sb-bottom-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 0;
+    z-index: 999;
+    backdrop-filter: blur(4px);
+  }
+
+  .sb-bottom-cta .sb-btn {
+    padding: 8px 14px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+
+  /* ✅ FIX : pousser le hero sous le header */
+  .sb-hero {
+    padding-top: 150px;
+  }
+}
+
+/* Encore un fix plus précis pour très petits mobiles */
+@media (max-width: 480px) {
+  .sb-hero {
+    padding-top: 170px;
+  }
+}
+
 
 
 
