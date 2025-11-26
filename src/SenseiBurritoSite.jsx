@@ -1114,7 +1114,7 @@ export default function SenseiBurritoSite() {
               <img src="/facebook.png" alt="Facebook" />
             </a>
             <a
-              href="https://www.google.com/search?sa=X&sca_esv=5f8ad457132af750&tbm=lcl&sxsrf=AE3TifNEnPkPbt5_XdU9Gg_FtXAP6SCzZQ:1761578034177&q=Sensei+Burrito+Reviews&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxIxNDczMzI1MjYyNzQ2NDExsDQzNN7AyPiKUSw4Na84NVPBqbSoKLMkXyEotSwztbx4ESsOCQAYif5nTQAAAA&rldimm=17662523271314409613&hl=en-FR&ved=2ahUKEwj1q-LH1cSQAxWBQEEAHZ2tBkcQ9fQKegQITRAF&biw=1920&bih=945&dpr=1#lkt=LocalPoiReviews"
+              href="https://g.page/r/CY0IxM9V4x31EBM/review"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Avis Google"
