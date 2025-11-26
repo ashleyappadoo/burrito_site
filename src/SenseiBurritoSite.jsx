@@ -1069,10 +1069,16 @@ export default function SenseiBurritoSite() {
 
       {/* HERO */}
       <section id="top" className="sb-hero">
-        <video className="sb-hero__video" autoPlay muted loop playsInline webkit-playsinline="true"
+        {/*<video className="sb-hero__video" autoPlay muted loop playsInline webkit-playsinline="true"
   preload="auto">
           <source src="/hero_sensei.png" type="video/mp4" />
-        </video>
+        </video>*/}
+        <img
+          src="/hero_sensei.png"
+          alt="Hero Sensei Burrito"
+          className="sb-hero__image"
+        />
+        
         <div className="sb-hero__overlay sb-hero__overlay--gradient" />
         {/*<div className="sb-hero__overlay sb-hero__overlay--grid" />  --------- grid sur video */}
         <div className="sb-hero__content">
