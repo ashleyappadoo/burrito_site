@@ -1071,7 +1071,7 @@ export default function SenseiBurritoSite() {
       <section id="top" className="sb-hero">
         <video className="sb-hero__video" autoPlay muted loop playsInline webkit-playsinline="true"
   preload="auto">
-          <source src="/enso_rotation.mp4" type="video/mp4" />
+          <source src="/hero_sensei.png" type="video/mp4" />
         </video>
         <div className="sb-hero__overlay sb-hero__overlay--gradient" />
         {/*<div className="sb-hero__overlay sb-hero__overlay--grid" />  --------- grid sur video */}
