@@ -1062,8 +1062,9 @@ export default function SenseiBurritoSite() {
             <img src="/logo_png.png" alt="Sensei Burrito" className="sb-logo" />
           </a>
           <nav className="sb-cta">
+            {/*Enlèvement 2 boutons header
             <a className="sb-btn sb-btn--gold" href="#collect">Click & Collect</a>
-            <a className="sb-btn sb-btn--dark" href="#delivery">Livraison</a>
+            <a className="sb-btn sb-btn--dark" href="#delivery">Livraison</a> */}
             {/* Y Aller */}
             <a
               className="sb-btn sb-btn--gold"
@@ -1103,7 +1104,15 @@ export default function SenseiBurritoSite() {
           </p>
           <div className="sb-hero__actions">
             <button className="sb-btn sb-btn--gold" onClick={() => setMenuOpen(true)}>Menu</button>
-            <a className="sb-btn sb-btn--dark" href="#delivery">Livraison</a>
+            <a
+                className="sb-btn sb-btn--dark"
+                href="https://app.squareup.com/gift/ML4Z76FS9DA1F/order"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Carte Cadeau
+              </a>
+
           </div>
           <ul className="sb-hero__badges">
             <li>🌮 Tacos gluten free</li>
