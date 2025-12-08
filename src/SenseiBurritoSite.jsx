@@ -1164,7 +1164,7 @@ export default function SenseiBurritoSite() {
         <div className="sb-container">
           <h2 className="sb-h2">Le Concept</h2>
           <p className="sb-lead">Sensei burrito, propose des produits frais de qualité et viandes effilochées en cuisson lente, cuisinés sur place dans un espace épuré imposant le respect et la discipline d'un dojo. 
-          
+          </p>
           {/*<p className="sb-lead">Chic, épuré, précis. Le burrito élevé au rang d'art martial culinaire.</p>*/}
           <div className="sb-grid-img">
             <article className="sb-card-img">
