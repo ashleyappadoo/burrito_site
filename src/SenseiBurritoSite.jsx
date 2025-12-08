@@ -1095,12 +1095,13 @@ export default function SenseiBurritoSite() {
         <div className="sb-hero__content">
           <h1 className="sb-hero__title">
             {/*L'art du <span className="gold">burrito</span>, la voie du <span className="gold">Sensei</span>*/}
-            <span className="gold">Burritos</span> artisanaux, famille de <span className="gold">Sensei</span>
+            <span className="gold">L'exigence</span> du dojo au service du <span className="gold">goût</span>
           </h1>
           <p className="sb-hero__tagline">
             {/*Une cuisine de caractère, des gestes précis, des saveurs franches. Bienvenue chez Sensei Burrito – l'alliance chic du burrito et de l'esprit dojo.*/}
-            Nous préparons nos burritos faits maison à l’angle de la rue Montorgueil et de la rue Tiquetonne.
-            Viandes effilochées en cuisson lente, servies dans un comptoir noir & or
+            A l’angle de la rue Montorgueil et de la rue Tiquetonne, chez Sensei burrito, les principes des arts martiaux sont
+            appliqués à la cuisine à emporter mexicaine : rigueur, précision et répétition du geste pour viser la perfection. 
+
           </p>
           <div className="sb-hero__actions">
             <button className="sb-btn sb-btn--gold" onClick={() => setMenuOpen(true)}>Menu</button>
@@ -1162,27 +1163,36 @@ export default function SenseiBurritoSite() {
       <section id="concept" className="sb-section">
         <div className="sb-container">
           <h2 className="sb-h2">Le Concept</h2>
-          <p className="sb-lead">Chic, épuré, précis. Le burrito élevé au rang d'art martial culinaire.</p>
+          <p className="sb-lead">Sensei burrito, propose des produits frais de qualité et viandes effilochées en cuisson lente, cuisinés sur place dans un espace épuré imposant le respect et la discipline d'un dojo. 
+          Les plats mexicains sont faits maison puis préparés à la minute dans l'esprit d'un kata, conjuguant geste artisanal répété et ayant du sens.
+          Equilibré, précis : le burrito est élevé au rang d'art martial culinaire.
+          Niché au cœur d’un quartier commerçant historique, entre Châtelet-Les Halles et la fameuse rue de Montorgueuil, Sensei Burrito est plus qu’un simple restaurant à emporter : c’est un lieu de vie aux choix affirmés et perpétrant l'histoire d'un quartier où l’on connaît ses voisins et où les passants deviennent des habitués.
+          </p>
+          {/*<p className="sb-lead">Chic, épuré, précis. Le burrito élevé au rang d'art martial culinaire.</p>*/}
           <div className="sb-grid-img">
             <article className="sb-card-img">
               <img src="/concept1.jpg" alt="Cuisine de précision" />
               <div className="sb-card-img__body">
                 <h3>Burrito Signature</h3>
-                <p>Notre signature : un burrito artisanal ceinturé comme une ceinture de karaté. Pulled beef, pulled chicken ou veggie, toujours accompagnés de la sauce secrète du Sensei.</p>
+                <p>Un burrito pulled beef, pulled chicken ou veggie accompagné d'une sauce originale aux notes japonisantes spéciale Sensei.
+                Côté sucré, des desserts simples Sud Americain sont proposés et en surprise à découvrir, l'unique Churritos maison.
+                </p>
               </div>
             </article>
             <article className="sb-card-img">
               <img src="/concept2.jpg" alt="Burritos Signature" />
               <div className="sb-card-img__body">
                 <h3>Burrito Artisanal</h3>
-                <p>Recettes courtes, gestes précis, mêmes bases chaque jour. Viandes effilochées en cuisson lente (3 à 20 h), pour des burritos réguliers et fondants.</p>
+                <p>Gestes répétés, recettes traditionnelles à base de produits frais sélectionnés et viandes effilochées (cuisson lente de 3 à 20 h), pour des burritos saints et de qualité.
+                </p>
               </div>
             </article>
             <article className="sb-card-img">
               <img src="/concept3.jpg" alt="Ambiance Dojo" />
               <div className="sb-card-img__body">
                 <h3>Ambiance Dojo</h3>
-                <p>Comptoir noir & or au coin de Montorgueil et Tiquetonne. Une ambiance familiale et élégante, inspirée du dojo.</p>
+                <p>Décor sobre noir & or pour une ambiance élégante mais vivante, inspirée du dojo.
+                </p>
               </div>
             </article>
           </div>
@@ -1201,16 +1211,18 @@ export default function SenseiBurritoSite() {
           <div className="sb-split__text">
             <h2 className="sb-h2">Notre Histoire</h2>
             <p>
-              Sensei Burrito, c’est une <strong>famille de sensei</strong>strong> habitant à Paris Châtelet, au coin de la rue Montorgueil et de la rue Tiquetonne.
+              Sensei Burrito, c'est à la fois une <strong>histoire de famille</strong>, et une histoire de passions ; le mariage des cultures et le partage de valeurs.
               {/*Niché dans le ventre de Paris, entre Les Halles de Châtelet et la rue animée de Montorgueuil, <strong>Sensei Burrito</strong> est plus qu'un simple restaurant : c'est un lieu de vie, un espace de convivialité et de partage.*/}
             </p>
             <p>
-              Entre le dojo et la cuisine, nous avons voulu un petit comptoir qui nous ressemble : <span className="gold strong">burritos artisanaux, viandes effilochées en cuisson lente (pulled beef, pulled chicken)</span>, noir & or, service direct dans notre quartier.
+              <span className="gold strong">Ce concept de cuisine à emporter mexicaine, marqué par les grands principes des arts martiaux</span>, font de ce restaurant tenu par un couple de passionnés de karaté un lieu atypique, sincère et singulier.
               {/*Installés dans la rue Tiquetonne, au cœur d'un quartier historique et commerçant, nous perpétuons une <span className="gold strong">tradition familiale ancrée ici depuis plus de 40 ans</span>. Un quartier où l'on connaît ses voisins, où les clients deviennent des habitués.*/}
             </p>
             <p>
-              Le cercle Sensei vient de l’<strong>Ensō</strong> japonais : un geste répété jusqu’à ce qu’il soit juste. C’est la même idée pour nos recettes, nos cuissons lentes et notre sauce secrète du Sensei.
+              Sa marque, inspirée de l’Enzo <strong>(円相)</strong>, cercle japonais tracé d’un seul geste, veut symboliser l’unité et l’harmonie, mais aussi la sobriété et l'humilité qui sont l’essence même de l'identité de ses fondateurs.
               {/*Notre marque s'inspire de l'<strong>Enzo (円相)</strong>, le cercle japonais tracé d'un seul geste, symbole d'unité et d'harmonie. Il est au cœur de notre identité : chaque burrito est unique, artisanal, jamais identique, mais toujours façonné avec respect et équilibre.*/}
+            </p>
+            <p>Car chaque burrito est unique, artisanal, jamais identique mais toujours façonné avec respect et équilibre.
             </p>
           </div>
         </div>
