@@ -1164,10 +1164,7 @@ export default function SenseiBurritoSite() {
         <div className="sb-container">
           <h2 className="sb-h2">Le Concept</h2>
           <p className="sb-lead">Sensei burrito, propose des produits frais de qualité et viandes effilochées en cuisson lente, cuisinés sur place dans un espace épuré imposant le respect et la discipline d'un dojo. 
-          Les plats mexicains sont faits maison puis préparés à la minute dans l'esprit d'un kata, conjuguant geste artisanal répété et ayant du sens.
-          Equilibré, précis : le burrito est élevé au rang d'art martial culinaire.
-          Niché au cœur d’un quartier commerçant historique, entre Châtelet-Les Halles et la fameuse rue de Montorgueuil, Sensei Burrito est plus qu’un simple restaurant à emporter : c’est un lieu de vie aux choix affirmés et perpétrant l'histoire d'un quartier où l’on connaît ses voisins et où les passants deviennent des habitués.
-          </p>
+          
           {/*<p className="sb-lead">Chic, épuré, précis. Le burrito élevé au rang d'art martial culinaire.</p>*/}
           <div className="sb-grid-img">
             <article className="sb-card-img">
