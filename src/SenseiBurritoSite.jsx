@@ -1164,7 +1164,8 @@ export default function SenseiBurritoSite() {
         <div className="sb-container">
           <h2 className="sb-h2">Le Concept</h2>
           <p className="sb-lead">Sensei burrito, propose des produits frais de qualité et viandes effilochées en cuisson lente, cuisinés sur place dans un espace épuré imposant le respect et la discipline d'un dojo. 
-          </p>
+          Les plats mexicains sont faits maison puis préparés à la minute dans l'esprit d'un kata, conjuguant geste artisanal répété et ayant du sens.
+          Equilibré, précis : le burrito est élevé au rang d'art martial culinaire.</p>
           {/*<p className="sb-lead">Chic, épuré, précis. Le burrito élevé au rang d'art martial culinaire.</p>*/}
           <div className="sb-grid-img">
             <article className="sb-card-img">
@@ -1180,7 +1181,7 @@ export default function SenseiBurritoSite() {
               <img src="/concept2.jpg" alt="Burritos Signature" />
               <div className="sb-card-img__body">
                 <h3>Burrito Artisanal</h3>
-                <p>Gestes répétés, recettes traditionnelles à base de produits frais sélectionnés et viandes effilochées (cuisson lente de 3 à 20 h), pour des burritos saints et de qualité.
+                <p>Gestes répétés, recettes traditionnelles à base de produits frais sélectionnés et viandes effilochées (cuisson lente de 3 à 20 h), pour des burritos sains et de qualité.
                 </p>
               </div>
             </article>
