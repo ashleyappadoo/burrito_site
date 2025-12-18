@@ -1059,7 +1059,7 @@ export default function SenseiBurritoSite() {
       <header className={`sb-header ${scrolled ? "sb-header--scrolled" : ""}`}>
         <div className="sb-header__inner">
           <a className="sb-brand" href="#top" aria-label="Sensei Burrito">
-            <img src="/logo_png.png" alt="Sensei Burrito" className="sb-logo" />
+            <img src="/sensei_burrito.jpg" alt="Sensei Burrito" className="sb-logo" />
           </a>
           <nav className="sb-cta">
             {/*Enlèvement 2 boutons header
@@ -1354,7 +1354,7 @@ export default function SenseiBurritoSite() {
       <footer className="sb-footer">
         <div className="sb-container sb-footer__inner">
           <div className="sb-footer__brand">
-            <img src="/logo_png.png" alt="Sensei Burrito" />
+            <img src="/sensei_burrito.jpg" alt="Sensei Burrito" />
           </div>
           <p>© {new Date().getFullYear()} Sensei Burrito — Tous droits réservés.</p>
           <nav className="sb-footer__social">
