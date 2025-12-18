@@ -51,14 +51,20 @@ body, .sb-root {
 }
 
 .sb-logo {
-  height: 82px;
-  transition: transform .4s ease, opacity .3s ease;
-  transform-origin: left center;
+  height: auto;
+  max-height: 110px;    
+  width: auto;
+  max-width: 180px;       
+  object-fit: contain;
+  transition: all 0.4s ease;
 }
 
+
 .sb-header--scrolled .sb-logo {
-  transform: scale(0.7);
+  max-height: 80px;
+  opacity: 0.9;
 }
+
 
 /* CTA desktop */
 .sb-cta {
@@ -87,7 +93,7 @@ body, .sb-root {
 
   /* HEADER mobile uniquement */
   .sb-header {
-    padding: 10px 0;
+    padding: 14px 0 10px;
     text-align: center;
   }
 
@@ -103,16 +109,16 @@ body, .sb-root {
   }
 
   .sb-logo {
-    height: 82px;
+    height: auto;
+    max-height: 120px;   
+    max-width: 200px;
     margin: 0 auto;
-    display: block;
-    transition: all .4s ease;
   }
 
   .sb-header--scrolled .sb-logo {
-    height: 42px; /* rétrécit légèrement au scroll */
-    transform: none; /* supprime le décalage */
+    max-height: 70px;
   }
+}
 
   /* Masquer les CTA du header */
   .sb-header .sb-cta {
