@@ -490,7 +490,7 @@ body, .sb-root {
 .sb-food-track {
   display: flex;
   gap: 28px;
-  animation: scrollFood 28s linear infinite;
+  animation: scrollFood 14s linear infinite;
 }
 
 .sb-food-track img {
@@ -518,7 +518,7 @@ body, .sb-root {
   }
   .sb-food-track {
     gap: 18px;
-    animation-duration: 22s;
+    animation-duration: 16s;
   }
 }
 
