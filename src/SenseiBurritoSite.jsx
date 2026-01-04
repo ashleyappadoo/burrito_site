@@ -1380,7 +1380,7 @@ export default function SenseiBurritoSite() {
                 setPopup("/CGV_SenseiBurrito_Square.pdf");
               }}
             >
-              Conditions Génrales de Vente
+              Conditions Générales de Vente
             </a>
             <a
               href="#"
