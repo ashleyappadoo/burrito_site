@@ -1377,6 +1377,15 @@ export default function SenseiBurritoSite() {
               href="#"
               onClick={(e) => {
                 e.preventDefault();
+                setPopup("/CGV_SenseiBurrito_Square.pdf");
+              }}
+            >
+              Conditions Génrales de Vente
+            </a>
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
                 setPopup("/Mentions_Legales_SenseiBurrito.pdf");
               }}
             >
