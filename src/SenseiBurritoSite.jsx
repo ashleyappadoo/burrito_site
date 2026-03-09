@@ -1263,11 +1263,11 @@ export default function SenseiBurritoSite() {
         <h2 className="sb-h2">Nous Contacter</h2>
         {/* Texte d’introduction */}
         <p className="sb-contact__intro">
-          La boutique <strong>Sensei Burrito</strong> ouvrira prochainement à Paris Châtelet,
+          La boutique <strong>Sensei Burrito</strong> est située à Paris Châtelet,
           à l’angle de la rue <strong>Montorgueil</strong> et de la rue <strong>Tiquetonne</strong>.<br /><br />
           Burritos artisanaux, viandes effilochées en cuisson lente (<em>pulled beef</em>, <em>pulled chicken</em>)
           et tacos maïs sans gluten arrivent bientôt.<br />
-          Pour être informé de l’ouverture ou nous écrire, laissez-nous un message ici.
+          Vous souhaitez en savoir plus? Laissez-nous un message ici.
         </p>
         <div className="sb-container sb-split">
       
