@@ -90,65 +90,6 @@ body, .sb-root {
 
 /* ================= MOBILE HEADER + BOTTOM CTA ================= */
 @media (max-width: 768px) {
-
-  /* HEADER mobile uniquement */
-  .sb-header {
-    padding: 14px 0 10px;
-    text-align: center;
-  }
-
-  .sb-header--scrolled {
-    padding: 6px 0;
-  }
-
-  .sb-header__inner {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .sb-logo {
-    height: auto;
-    max-height: 120px;   
-    max-width: 200px;
-    margin: 0 auto;
-  }
-
-  .sb-header--scrolled .sb-logo {
-    max-height: 70px;
-  }
-}
-
-  /* Masquer les CTA du header */
-  .sb-header .sb-cta {
-    display: none;
-  }
-
-  /* CTA fixes en bas d’écran */
-  .sb-bottom-cta {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0,0,0,0.85);
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    padding: 10px 0;
-    z-index: 999;
-    backdrop-filter: blur(4px);
-  }
-
-  .sb-bottom-cta .sb-btn {
-    padding: 8px 14px;
-    font-size: 14px;
-    border-radius: 8px;
-  }
-}
-/* ================= MOBILE HEADER + BOTTOM CTA ================= */
-@media (max-width: 768px) {
-
   /* HEADER mobile uniquement */
   .sb-header {
     padding: 10px 0;
@@ -170,15 +111,19 @@ body, .sb-root {
     height: 82px;
     margin: 0 auto;
     display: block;
-    transition: all .4s ease;
+    transition: all 0.4s ease;
+    max-width: 200px;
+    width: auto;
+    object-fit: contain;
   }
 
   .sb-header--scrolled .sb-logo {
-    height: 42px; /* rétrécit légèrement au scroll */
-    transform: none; /* supprime le décalage */
+    height: 42px;
+    transform: none;
+    max-height: 70px;
   }
 
-  /* Masquer les CTA du header */
+  /* Masquer les CTA du header uniquement sur mobile */
   .sb-header .sb-cta {
     display: none;
   }
@@ -189,7 +134,7 @@ body, .sb-root {
     bottom: 0;
     left: 0;
     width: 100%;
-    background: rgba(0,0,0,0.85);
+    background: rgba(0, 0, 0, 0.85);
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -204,20 +149,17 @@ body, .sb-root {
     border-radius: 8px;
   }
 
-  /* ✅ FIX : pousser le hero sous le header */
+  /* Décale le hero vers le bas */
   .sb-hero {
     padding-top: 150px;
   }
 }
 
-/* Encore un fix plus précis pour très petits mobiles */
 @media (max-width: 480px) {
   .sb-hero {
     padding-top: 170px;
   }
 }
-
-
 
 
 /* ================= HERO ================= */
@@ -1400,11 +1342,40 @@ export default function SenseiBurritoSite() {
 
 
       {/* CTA BAS DE PAGE MOBILE */}
-      <div className="sb-bottom-cta">
+      {/*<div className="sb-bottom-cta">
         <a className="sb-btn sb-btn--gold" href="#collect">A Emporter</a>
         <a className="sb-btn sb-btn--dark" href="#delivery">Livraison</a>
         <a className="sb-btn sb-btn--gold" href="#reservation">Sur Place</a>
+      </div>*/}
+      <div className="sb-bottom-cta">
+        {/*<a
+          className="sb-btn sb-btn--gold"
+          href="https://commandes.senseiburrito.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          A Emporter
+        </a>*/}
+      
+        <a
+          className="sb-btn sb-btn--dark"
+          href="https://commandes.senseiburrito.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Livraison
+        </a>
+      
+        <a
+          className="sb-btn sb-btn--gold"
+          href="https://www.google.com/maps/dir//Sensei+Burrito,+48+Rue+Tiquetonne,+75002+Paris/@46.8162918,-1.7434237,7z/data=!4m9!4m8!1m0!1m5!1m1!1s0x47e66fcf0feb78ed:0xf51de355cfc4088d!2m2!1d2.3470693!2d48.8648139!3e3?entry=ttu&g_ep=EgoyMDI1MTAyMi4wIKXMDSoASAFQAw%3D%3D"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Sur Place
+        </a>
       </div>
+      
 
       {/* === POPUP PDF === */}
       {popup && (
