@@ -918,6 +918,62 @@ body, .sb-root {
   }
 }
 
+/* ================= POPUP RÉSERVATION OPENTABLE ================= */
+.sb-reservation-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3500;
+  padding: 20px;
+  backdrop-filter: blur(6px);
+}
+
+.sb-reservation-popup__content {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  background: #0a0a0a;
+  border: 1px solid var(--gold);
+  border-radius: 14px;
+  padding: 32px 24px;
+  box-shadow: 0 0 25px rgba(212,175,55,0.25);
+}
+
+.sb-reservation-popup__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--gold);
+  color: #000;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.sb-opentable-widget {
+  margin-top: 20px;
+  width: 100%;
+  min-height: 360px;
+}
+
+@media (max-width: 768px) {
+  .sb-reservation-popup__content {
+    max-width: 95%;
+    padding: 28px 18px;
+  }
+
+  .sb-opentable-widget {
+    min-height: 420px;
+  }
+}
+
 
 /* ================= LIGHTBOX ================= */
 .sb-lightbox {
@@ -954,6 +1010,7 @@ export default function SenseiBurritoSite() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [popup, setPopup] = useState(null);
+  const [reservationOpen, setReservationOpen] = useState(false);
 
 
   useEffect(() => {
@@ -992,6 +1049,23 @@ export default function SenseiBurritoSite() {
     };
   }
 }, []);
+
+  useEffect(() => {
+  if (!reservationOpen) return;
+
+  const container = document.getElementById("opentable-widget");
+  if (!container) return;
+
+  container.innerHTML = "";
+
+  const script = document.createElement("script");
+  script.type = "text/javascript";
+  script.src =
+    "https://www.opentable.fr/widget/reservation/loader?rid=492192&type=standard&theme=standard&color=1&dark=false&iframe=true&domain=fr&lang=fr-FR&newtab=false&ot_source=Restaurant%20website&cfe=true";
+
+  container.appendChild(script);
+}, [reservationOpen]);
+  
 /*-----------fin nouveau useEffect----------------*/
 
   return (
@@ -1025,6 +1099,12 @@ export default function SenseiBurritoSite() {
             >
               Y Aller
             </a>
+            <button
+              className="sb-btn sb-btn--gold"
+              onClick={() => setReservationOpen(true)}
+            >
+              Réserver
+            </button>
           </nav>
         </div>
       </header>
@@ -1374,8 +1454,31 @@ export default function SenseiBurritoSite() {
         >
           Sur Place
         </a>
+
+        <button
+          className="sb-btn sb-btn--gold"
+          onClick={() => setReservationOpen(true)}
+        >
+          Réserver
+        </button>
       </div>
+
+      {/* === POPUP RÉSERVATION === */}
+      {reservationOpen && (
+        <div className="sb-reservation-popup" onClick={() => setReservationOpen(false)}>
+          <div className="sb-reservation-popup__content" onClick={(e) => e.stopPropagation()}>
+            <button
+              className="sb-reservation-popup__close"
+              onClick={() => setReservationOpen(false)}
+            >
+              ✕
+            </button>
       
+            <h2 className="sb-h2">Réserver</h2>
+            <div id="opentable-widget" className="sb-opentable-widget"></div>
+          </div>
+        </div>
+      )}
 
       {/* === POPUP PDF === */}
       {popup && (
