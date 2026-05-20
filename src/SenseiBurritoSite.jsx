@@ -1034,21 +1034,6 @@ export default function SenseiBurritoSite() {
   }
 }, []);
 
-  useEffect(() => {
-  if (!reservationOpen) return;
-
-  const container = document.getElementById("opentable-widget");
-  if (!container) return;
-
-  container.innerHTML = "";
-
-  const script = document.createElement("script");
-  script.type = "text/javascript";
-  script.src =
-    "https://www.opentable.fr/widget/reservation/loader?rid=492192&type=standard&theme=standard&color=1&dark=false&iframe=true&domain=fr&lang=fr-FR&newtab=false&ot_source=Restaurant%20website&cfe=true";
-
-  container.appendChild(script);
-}, [reservationOpen]);
   
 /*-----------fin nouveau useEffect----------------*/
 
