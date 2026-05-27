@@ -1241,7 +1241,7 @@ export default function SenseiBurritoSite() {
             <img src="/food5.jpg" alt="Food 5" />
         
             {/* duplication pour un défilement infini fluide */}
-            <img src="/food1.jpg" alt="Food 1 duplicate" />
+            <img src="/food1.jpeg" alt="Food 1 duplicate" />
             <img src="/food2.jpg" alt="Food 2 duplicate" />
             <img src="/food3.jpg" alt="Food 3 duplicate" />
             <img src="/food4.jpg" alt="Food 4 duplicate" />
