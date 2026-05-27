@@ -1234,7 +1234,7 @@ export default function SenseiBurritoSite() {
         {/* Gallerie Food défilante */}
         <div className="sb-food-gallery">
           <div className="sb-food-track">
-            <img src="/food1.jpg" alt="Food 1" />
+            <img src="/food1.jpeg" alt="Food 1" />
             <img src="/food2.jpg" alt="Food 2" />
             <img src="/food3.jpg" alt="Food 3" />
             <img src="/food4.jpg" alt="Food 4" />
